@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#11000000"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <RadioButton
+            android:id="@+id/rb_common"
+            style="@style/bottom_tag_style"
+            android:drawableTop="@drawable/rb_common_frame_drawable_select"
+            android:text="常用框架" />
+
+        <RadioButton
+            android:id="@+id/rb_third"
+            style="@style/bottom_tag_style"
+            android:drawableTop="@drawable/rb_third_frame_drawable_select"
+            android:text="第三方" />
+
+        <RadioButton
+            android:id="@+id/rb_custom"
+            style="@style/bottom_tag_style"
+            android:drawableTop="@drawable/rb_custom_frame_drawable_select"
+            android:text="自定义控件" />
+
+        <RadioButton
+            android:id="@+id/rb_other"
+            style="@style/bottom_tag_style"
+            android:drawableTop="@drawable/rb_other_frame_drawable_select"
+            android:text="其他" />
+    </RadioGroup>
+</LinearLayout>

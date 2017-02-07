@@ -1,0 +1,293 @@
+{
+    "android_gradle_plugin_version": "2.0.0",
+    "apk_path": "D:\\wyj\\Demo\\Demo\\app\\build\\outputs\\apk\\app-debug.apk",
+    "apt": {
+        
+    },
+    "apt_libraries": {
+        "dagger": false,
+        "butterknife": true
+    },
+    "auto_dependency": true,
+    "build_cache_dir": "D:\\wyj\\Demo\\Demo\\app\\build\\freeline",
+    "build_directory": "D:\\wyj\\Demo\\Demo\\app\\build",
+    "build_script": "gradlew.bat :app:assembleDebug",
+    "build_script_work_directory": "",
+    "build_tools_directory": "D:\\Android\\sdk\\build-tools\\24.0.1",
+    "build_tools_version": "24.0.1",
+    "compile_sdk_directory": "D:\\Android\\sdk\\platforms\\android-23",
+    "compile_sdk_version": "android-23",
+    "databinding": [
+        
+    ],
+    "databinding_compiler_jar": "",
+    "databinding_modules": [
+        
+    ],
+    "debug_package": "com.example.administrator.demo",
+    "exclude_dep_res_paths": [
+        
+    ],
+    "extra_dep_res_paths": [
+        
+    ],
+    "freeline_cache_dir": "D:\\wyj\\Demo\\Demo",
+    "freeline_gradle_plugin_version": "0.8.4",
+    "java_home": "D:\\Java\\jdk1.8.0_74",
+    "launcher": "com.example.administrator.demo.Framework.LauncherActivity",
+    "main_assets_directory": [
+        "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\assets",
+        "D:\\wyj\\Demo\\Demo\\app\\src\\main\\assets"
+    ],
+    "main_jniLibs_directory": [
+        "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\jniLibs",
+        "D:\\wyj\\Demo\\Demo\\app\\src\\main\\jniLibs"
+    ],
+    "main_jni_directory": [
+        "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\jni",
+        "D:\\wyj\\Demo\\Demo\\app\\src\\main\\jni"
+    ],
+    "main_manifest_path": "D:\\wyj\\Demo\\Demo\\app\\src\\main\\AndroidManifest.xml",
+    "main_project_dir": "app",
+    "main_project_name": "app",
+    "main_r_path": "D:\\wyj\\Demo\\Demo\\app\\build\\generated\\source\\r\\debug\\R.java",
+    "main_res_directory": [
+        "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\res",
+        "D:\\wyj\\Demo\\Demo\\app\\src\\main\\res"
+    ],
+    "main_src_directory": [
+        "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\java",
+        "D:\\wyj\\Demo\\Demo\\app\\src\\main\\java"
+    ],
+    "module_dependencies": {
+        "Android-PullToRefresh": [
+            
+        ],
+        "app": [
+            "okhttputils",
+            "xutils",
+            "Android-PullToRefresh",
+            "pullToRefreshListFragment",
+            "pullToRefreshViewPager",
+            "banner"
+        ],
+        "banner": [
+            
+        ],
+        "okhttputils": [
+            
+        ],
+        "pullToRefreshListFragment": [
+            "Android-PullToRefresh"
+        ],
+        "pullToRefreshViewPager": [
+            "Android-PullToRefresh"
+        ],
+        "xutils": [
+            
+        ]
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "D:\\wyj\\Demo\\Demo\\app"
+        },
+        {
+            "name": "okhttputils",
+            "path": "D:\\wyj\\Demo\\Demo\\okhttputils"
+        },
+        {
+            "name": "xutils",
+            "path": "D:\\wyj\\Demo\\Demo\\xutils"
+        },
+        {
+            "name": "Android-PullToRefresh",
+            "path": "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh"
+        },
+        {
+            "name": "pullToRefreshListFragment",
+            "path": "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment"
+        },
+        {
+            "name": "pullToRefreshViewPager",
+            "path": "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager"
+        },
+        {
+            "name": "banner",
+            "path": "D:\\wyj\\Demo\\Demo\\banner"
+        }
+    ],
+    "package": "com.example.administrator.demo",
+    "product_flavor": "",
+    "project_source_sets": {
+        "Android-PullToRefresh": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\release\\assets",
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\release\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\release\\jni",
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\release\\res",
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\release\\java",
+                "D:\\wyj\\Demo\\Demo\\Android-PullToRefresh\\src\\main\\java"
+            ]
+        },
+        "app": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\assets",
+                "D:\\wyj\\Demo\\Demo\\app\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\app\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\jni",
+                "D:\\wyj\\Demo\\Demo\\app\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\app\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\res",
+                "D:\\wyj\\Demo\\Demo\\app\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\app\\src\\debug\\java",
+                "D:\\wyj\\Demo\\Demo\\app\\src\\main\\java"
+            ]
+        },
+        "banner": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\release\\assets",
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\release\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\release\\jni",
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\banner\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\release\\res",
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\release\\java",
+                "D:\\wyj\\Demo\\Demo\\banner\\src\\main\\java"
+            ]
+        },
+        "okhttputils": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\release\\assets",
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\release\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\release\\jni",
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\release\\res",
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\release\\java",
+                "D:\\wyj\\Demo\\Demo\\okhttputils\\src\\main\\java"
+            ]
+        },
+        "pullToRefreshListFragment": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\release\\assets",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\release\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\release\\jni",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\release\\res",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\release\\java",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshListFragment\\src\\main\\java"
+            ]
+        },
+        "pullToRefreshViewPager": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\release\\assets",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\release\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\release\\jni",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\release\\res",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\release\\java",
+                "D:\\wyj\\Demo\\Demo\\pullToRefreshViewPager\\src\\main\\java"
+            ]
+        },
+        "xutils": {
+            "main_assets_directory": [
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\release\\assets",
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\release\\jniLibs",
+                "D:\\wyj\\Demo\\Demo\\xutils\\libs"
+            ],
+            "main_jni_directory": [
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\release\\jni",
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\main\\jni"
+            ],
+            "main_manifest_path": "D:\\wyj\\Demo\\Demo\\xutils\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\release\\res",
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\release\\java",
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\main\\java",
+                "D:\\wyj\\Demo\\Demo\\xutils\\src\\main\\java_compat"
+            ]
+        }
+    },
+    "project_type": "gradle",
+    "retrolambda": {
+        
+    },
+    "root_dir": "D:\\wyj\\Demo\\Demo",
+    "sdk_directory": "D:\\Android\\sdk",
+    "use_jdk8": false
+}

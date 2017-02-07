@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.demo.Framework.pulltorefresh.PullToRefreshActivity">
+
+    <include layout="@layout/titlebar" />
+    <Button
+        android:id="@+id/btn_ptr_listView"
+        android:layout_width="match_parent"
+        android:text="ListView中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_ptr_gridView"
+        android:layout_width="match_parent"
+        android:text="GridView中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_ptr_fragment"
+        android:layout_width="match_parent"
+        android:text="Fragment中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_ptr_listInViewPager"
+        android:layout_width="match_parent"
+        android:text="ListView在ViewPager中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_ptr_viewPager"
+        android:layout_width="match_parent"
+        android:text="ViewPager中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_ptr_webView"
+        android:layout_width="match_parent"
+        android:text="WebView1中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_ptr_webView2"
+        android:layout_width="match_parent"
+        android:text="WebView2中使用"
+        android:textSize="@dimen/sp_20"
+        android:layout_height="wrap_content" />
+</LinearLayout>

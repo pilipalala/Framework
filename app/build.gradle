@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.antfortune.freeline'
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
+    defaultConfig {
+        applicationId "com.example.administrator.demo"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName '1.0.20170103'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile project(':okhttputils')
+    compile project(':xutils')
+    //eventbus
+    compile files('libs/eventbus-3.0.0.jar')
+    compile files('libs/eventbus-3.0.0-sources.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.github.clans:fab:1.6.4'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile project(':Android-PullToRefresh')
+    compile project(':pullToRefreshListFragment')
+    compile project(':pullToRefreshViewPager')
+    compile project(':banner')
+    //Fresco 图片加载库
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    //Fresco Gif动画图片加载库
+    compile 'com.facebook.fresco:animated-gif:0.14.1'
+    //    compile 'com.zxy.android:recovery:0.0.8'
+    //glide框架
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //glide 自定义的变换库
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    //页面的滑动关闭
+    compile 'com.jude:swipebackhelper:3.1.2'
+    // If you want to use the GPU Filters
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
+    // 图片加载框架之Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'jp.wasabeef:picasso-transformations:2.1.0'
+    //FastJson JSON解析框架
+    compile 'com.alibaba:fastjson:1.1.55.android'
+}
+repositories {
+    jcenter()
+}

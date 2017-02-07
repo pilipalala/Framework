@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.atguigu.okhttpsample.MainActivity">
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get请求" />
+    <Button
+        android:id="@+id/btn_get_httptuils"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用http-utils的get请求" />
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post请求" />
+    <Button
+        android:id="@+id/btn_post_httptuils"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用http-utils的post请求" />
+    <Button
+    android:id="@+id/btn_download"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="使用http-utils下载文件" />
+    <Button
+        android:id="@+id/btn_cainiao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="菜鸟窝版本OKHttP" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="显示请求数据" />
+
+    </ScrollView>
+
+
+</LinearLayout>
+

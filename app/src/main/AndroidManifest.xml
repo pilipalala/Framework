@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.demo">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Framework.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".Framework.LauncherActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Main.MainActivity" />
+        <activity android:name=".Main.Activity1" />
+        <activity android:name=".Main.ViewPagerActivity" />
+        <activity android:name=".Main.SwipeRefresh" />
+        <activity android:name=".Main.HuoDongActivity" />
+        <activity android:name=".Main.ActivityFragment" />
+        <!-- 模拟新闻Fragment界面 -->
+        <activity android:name=".Main.XinWenActivity" />
+        <activity android:name=".AndroidAndH5.Main" />
+        <activity android:name=".AndroidAndH5.JavaAndJSActivity" />
+        <activity android:name=".AndroidAndH5.JsCallJavaVideoActivity" />
+        <activity android:name=".AndroidAndH5.JsCallJavaCallPhoneActivity" />
+        <activity
+            android:name=".Framework.FWk_MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".Framework.okhttp.activity.OKHttpActivity" />
+        <activity android:name=".Framework.json.activity.NativeJsonPraseActivity" />
+        <activity android:name=".Framework.json.activity.GsonActivity" />
+        <activity android:name=".Framework.xutils3.XUtils3MainActivity" />
+        <activity android:name=".Framework.xutils3.annotation.FragmentXUtils3Activity" />
+        <activity android:name=".Framework.xutils3.net.XUtils3NetActivity" />
+        <activity android:name=".Framework.eventbus.EventBusActivity" />
+        <activity android:name=".Framework.eventbus.EventBusSendActivity" />
+        <activity android:name=".Framework.imageloader.ImageLoaderActivity" />
+        <activity android:name=".Framework.imageloader.ImageListViewActivity" />
+        <activity android:name=".Framework.imageloader.ImageGridViewActivity" />
+        <activity android:name=".Framework.imageloader.ImageViewPagerActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshListActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshGridActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshListFragmentActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshListInViewPagerActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshViewPagerActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshWebViewActivity" />
+        <activity android:name=".Framework.pulltorefresh.PullToRefreshWebView2Activity" />
+        <activity android:name=".Framework.recycleview.RecycleViewActivity" />
+        <activity android:name=".Framework.banner.activity.BannerMainActivity" />
+        <activity android:name=".Framework.banner.activity.BannerAnimationActivity" />
+        <activity android:name=".Framework.banner.activity.BannerStyleActivity" />
+        <activity android:name=".Framework.banner.activity.CustomBannerActivity" />
+        <activity android:name=".Framework.banner.activity.IndicatorPositionActivity" />
+        <activity android:name=".Framework.tablayout.activity.TabLayoutMainActivity" />
+        <activity android:name=".Framework.glide.activity.GlideMainActivity" />
+        <activity android:name=".Framework.glide.activity.GlideBaseActivity" />
+        <activity android:name=".Framework.glide.activity.GlideRecycleViewActivity" />
+        <activity android:name=".Framework.glide.activity.GlideTranfromationsActivity" />
+        <activity android:name=".Framework.picasso.activity.PicassoMainActivity" />
+        <activity android:name=".Framework.picasso.activity.PicassoListViewActivity" />
+        <activity android:name=".Framework.picasso.activity.PicassoTranfromationsActivity" />
+        <activity android:name=".Framework.fresco.activity.FrescoMainActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoSpimgActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoCropActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoCircleAndCornerActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoJpegActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoGifActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoMultiActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoListenerActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoresizeActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoModifyImgActivity" />
+        <activity android:name=".Framework.fresco.activity.FresoAutoSizeActivity" />
+        <activity android:name=".Framework.fastjson.FastJsonActivity" />
+        <activity android:name=".Framework.okhttp.activity.CaiNiaoWoActivity" />
+        <activity android:name=".Framework.youkumenu.YouKuMenuActivity"></activity>
+    </application>
+
+</manifest>
