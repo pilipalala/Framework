@@ -40,7 +40,7 @@ public class CustomFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_expandable_list_item_1, DataUtil.COMMON_DATA);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_expandable_list_item_1, DataUtil.CUSTOM_DATA);
         mListView.setAdapter(adapter);
         Log.e(TAG, "自定义控件数据初始化了...");
 

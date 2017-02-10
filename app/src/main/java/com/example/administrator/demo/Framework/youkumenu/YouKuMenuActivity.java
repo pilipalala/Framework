@@ -61,12 +61,12 @@ public class YouKuMenuActivity extends BaseActivity {
                     //隐藏
                     Tools.hideView(level3);
                     isShowLevel3 = false;
-                    level3.setVisibility(View.GONE);
+//                    level3.setVisibility(View.GONE);
                 } else {
                     //显示
                     Tools.showView(level3);
                     isShowLevel3 = true;
-                    level3.setVisibility(View.VISIBLE);
+//                    level3.setVisibility(View.VISIBLE);
                 }
                 break;
             case R.id.icon_home:
@@ -75,18 +75,18 @@ public class YouKuMenuActivity extends BaseActivity {
                     //隐藏
                     Tools.hideView(level2);
                     isShowLevel2 = false;
-                    level2.setVisibility(View.GONE);
+//                    level2.setVisibility(View.GONE);
                     if (isShowLevel3) {
                         //隐藏
                         Tools.hideView(level3, 700);
                         isShowLevel3 = false;
-                        level3.setVisibility(View.GONE);
+//                        level3.setVisibility(View.GONE);
                     }
                 } else {
                     //显示
                     Tools.showView(level2);
                     isShowLevel2 = true;
-                    level2.setVisibility(View.VISIBLE);
+//                    level2.setVisibility(View.VISIBLE);
                 }
                 break;
         }
@@ -98,27 +98,27 @@ public class YouKuMenuActivity extends BaseActivity {
             if (isShowLevel1) {
                 /*隐藏一级*/
                 Tools.hideView(level1);
-                level1.setVisibility(View.GONE);
+//                level1.setVisibility(View.GONE);
                 isShowLevel1 = false;
                 if (isShowLevel2) {
                     /*隐藏二级*/
                     Tools.hideView(level2, 300);
-                    level2.setVisibility(View.GONE);
+//                    level2.setVisibility(View.GONE);
                     isShowLevel2 = false;
                     if (isShowLevel3) {
                         /*隐藏三级*/
                         Tools.hideView(level3, 600);
-                        level3.setVisibility(View.GONE);
+//                        level3.setVisibility(View.GONE);
                         isShowLevel3 = false;
                     }
                 }
 
             } else {
                 Tools.showView(level1);
-                level1.setVisibility(View.VISIBLE);
+//                level1.setVisibility(View.VISIBLE);
                 isShowLevel1 = true;
                 Tools.showView(level2,500);
-                level2.setVisibility(View.VISIBLE);
+//                level2.setVisibility(View.VISIBLE);
                 isShowLevel2 = true;
             }
             return true;
