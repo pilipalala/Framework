@@ -5,6 +5,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.demo.Framework.youkumenu.YouKuMenuActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_below="@+id/button"
+        android:scaleType="fitXY"
+        android:src="@mipmap/atguigu_logo" />
+
     <RelativeLayout
         android:id="@+id/level3"
         android:layout_width="@dimen/dp_280"
@@ -53,8 +67,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/channel6"
-            android:layout_toLeftOf="@+id/channel6"
             android:layout_marginBottom="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/channel6"
             android:src="@mipmap/channel5" />
 
 

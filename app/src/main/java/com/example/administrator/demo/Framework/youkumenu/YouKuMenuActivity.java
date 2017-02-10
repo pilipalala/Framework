@@ -1,10 +1,15 @@
 package com.example.administrator.demo.Framework.youkumenu;
 
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
+import android.graphics.PointF;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.administrator.demo.Framework.BaseActivity;
 import com.example.administrator.demo.R;
@@ -26,6 +31,10 @@ public class YouKuMenuActivity extends BaseActivity {
     ImageView iconHome;
     @Bind(R.id.level1)
     RelativeLayout level1;
+    @Bind(R.id.button)
+    Button button;
+    @Bind(R.id.image)
+    ImageView image;
 
     /**
      * 是否显示第一个圆环
@@ -53,9 +62,49 @@ public class YouKuMenuActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.icon_menu, R.id.icon_home})
+    @OnClick({R.id.icon_menu, R.id.icon_home, R.id.button})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.button:
+                Toast.makeText(YouKuMenuActivity.this, "属性动画", Toast.LENGTH_SHORT).show();
+                /*ObjectAnimator.ofFloat(image, "rotationX", 0, 360).setDuration(1000).start();
+                ObjectAnimator.ofFloat(image, "rotationY", 0, 360).setDuration(1000).start();*/
+
+                /*PropertyValuesHolder holder1 = PropertyValuesHolder.ofFloat("translationX", 0, 100);
+                PropertyValuesHolder holder4 = PropertyValuesHolder.ofFloat("translationY", 0, 100);
+                PropertyValuesHolder holder2 = PropertyValuesHolder.ofFloat("scaleX", 0, 1);
+                PropertyValuesHolder holder3 = PropertyValuesHolder.ofFloat("scaleY", 0, 1);
+                ObjectAnimator.ofPropertyValuesHolder(image,  holder2).setDuration(2000).start();*/
+
+                /*ObjectAnimator animator1 = ObjectAnimator.ofFloat(image, "translationX", 0, 100);
+                ObjectAnimator animator2 = ObjectAnimator.ofFloat(image, "alpha", 0, 1);
+                AnimatorSet animatorSet = new AnimatorSet();
+                *//********按顺序播放*****//*
+                animatorSet.playSequentially(animator1, animator2);
+
+
+
+                animatorSet.setDuration(2000);
+                animatorSet.start();*/
+
+                ValueAnimator animator = ValueAnimator.ofObject(new TypeEvaluator<PointF>() {
+
+                    @Override
+                    public PointF evaluate(float fraction, PointF startValue,
+                                           PointF endValue) {
+
+                        float x = (endValue.x - startValue.x) * fraction;
+                        float y = (endValue.y - startValue.x) * fraction;
+                        button.setX(x);
+                        button.setY(y);
+                        return null;
+                    }
+                }, new PointF(1, 1), new PointF(300, 300));
+                animator.setDuration(5000);
+                animator.start();
+
+
+                break;
             case R.id.icon_menu:
                 if (isShowLevel3) {
                     //隐藏
@@ -117,7 +166,7 @@ public class YouKuMenuActivity extends BaseActivity {
                 Tools.showView(level1);
 //                level1.setVisibility(View.VISIBLE);
                 isShowLevel1 = true;
-                Tools.showView(level2,500);
+                Tools.showView(level2, 500);
 //                level2.setVisibility(View.VISIBLE);
                 isShowLevel2 = true;
             }
