@@ -15,6 +15,8 @@ public class DataUtil {
 
         public static final String[] CUSTOM_DATA = {
                 "优酷菜单--属性动画"};
+        public static final String[] OTHER_DATA = {
+                "MaterialDesignDemo"};
     public static final String listOfJson = "[\n" +
             "    {\n" +
             "        \"id\": 1,\n" +

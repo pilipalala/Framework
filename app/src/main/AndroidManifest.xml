@@ -84,7 +84,10 @@
         <activity android:name=".Framework.fresco.activity.FresoAutoSizeActivity" />
         <activity android:name=".Framework.fastjson.FastJsonActivity" />
         <activity android:name=".Framework.okhttp.activity.CaiNiaoWoActivity" />
-        <activity android:name=".Framework.youkumenu.YouKuMenuActivity"></activity>
+        <activity android:name=".Framework.youkumenu.YouKuMenuActivity" />
+        <activity
+            android:name=".Framework.materialdesign.MaterialDesignDemo"
+            android:label="@string/title_activity_material_design_demo"></activity>
     </application>
 
 </manifest>

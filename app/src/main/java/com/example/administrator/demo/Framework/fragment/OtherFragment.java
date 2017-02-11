@@ -1,12 +1,18 @@
 package com.example.administrator.demo.Framework.fragment;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.util.Log;
-import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.demo.Framework.BaseFragment;
+import com.example.administrator.demo.Framework.materialdesign.MaterialDesignDemo;
+import com.example.administrator.demo.Main.utils.DataUtil;
+import com.example.administrator.demo.R;
 
 /**
  * Created by Administrator on 2016/12/13.
@@ -15,22 +21,33 @@ public class OtherFragment extends BaseFragment {
 
     private TextView textView;
     private static final String TAG = "CustomFragment";
+    private ListView mListView;
 
     @Override
     protected View initView() {
         Log.e(TAG, "其他页面初始化了...");
-        textView = new TextView(mContext);
-        textView.setTextSize(20);
-        textView.setTextColor(Color.RED);
-        textView.setGravity(Gravity.CENTER);
-        return textView;
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_common_frame, null);
+        mListView = (ListView) view.findViewById(R.id.listView);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        startActivity(new Intent(getActivity(), MaterialDesignDemo.class));
+                        break;
+                }
+            }
+        });
+        return view;
     }
 
     @Override
     protected void initData() {
-        Log.e(TAG,"其他数据初始化了...");
+        /*MaterialDesignDemo*/
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_expandable_list_item_1, DataUtil.OTHER_DATA);
+        mListView.setAdapter(adapter);
+        Log.e(TAG, "其他数据初始化了...");
         super.initData();
-        textView.setText("其他的世界！！！");
 
     }
 }
