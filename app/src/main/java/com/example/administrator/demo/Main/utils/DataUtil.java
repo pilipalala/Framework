@@ -14,7 +14,7 @@ public class DataUtil {
             "Expandablelistview", "UniversalVideoView", "....."};
 
         public static final String[] CUSTOM_DATA = {
-                "优酷菜单--属性动画"};
+                "优酷菜单--属性动画","轮播图--ViewPager"};
         public static final String[] OTHER_DATA = {
                 "MaterialDesignDemo"};
     public static final String listOfJson = "[\n" +

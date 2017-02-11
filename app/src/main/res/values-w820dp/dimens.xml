@@ -5,4 +5,5 @@
     <dimen name="activity_horizontal_margin">64dp</dimen>
     <dimen name="dp_270">270dp</dimen>
     <dimen name="dp_280">280dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
 </resources>

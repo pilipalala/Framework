@@ -87,7 +87,8 @@
         <activity android:name=".Framework.youkumenu.YouKuMenuActivity" />
         <activity
             android:name=".Framework.materialdesign.MaterialDesignDemo"
-            android:label="@string/title_activity_material_design_demo"></activity>
+            android:label="@string/title_activity_material_design_demo" />
+        <activity android:name=".Framework.guanggaotiao.GuangGaoTiaoActivity"></activity>
     </application>
 
 </manifest>
