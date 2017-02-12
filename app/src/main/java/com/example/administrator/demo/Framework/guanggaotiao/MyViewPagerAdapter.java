@@ -2,6 +2,7 @@ package com.example.administrator.demo.Framework.guanggaotiao;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  * Created by Administrator on 2017/2/11.
  */
 public class MyViewPagerAdapter extends PagerAdapter {
+    private String TAG = GuangGaoTiaoActivity.class.getName();
     private ArrayList<ImageView> imageViewList;
     private Context context;
 
@@ -29,6 +31,7 @@ public class MyViewPagerAdapter extends PagerAdapter {
      */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        Log.e(TAG, "instantiateItem--->position: " + position + "--->container" + container);
         ImageView imageView = imageViewList.get(position);
         container.addView(imageView); //添加到ViewPager中
         return imageView;
@@ -56,11 +59,12 @@ public class MyViewPagerAdapter extends PagerAdapter {
      * 释放资源
      *
      * @param container viewPager
-     * @param position 要释放的位置
-     * @param object 要释放的页面
+     * @param position  要释放的位置
+     * @param object    要释放的页面
      */
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
+        Log.e(TAG, "destroyItem--->position: " + position + "--->object" + object);
         container.removeView((ImageView) object);
     }
 
