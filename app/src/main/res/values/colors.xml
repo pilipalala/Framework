@@ -12,4 +12,6 @@
     <color name="recoveryTextColor">#FFFFFF</color>
 
     <color name="main_color">#5CB85C</color>
+    <color name="themeColor">#13227a</color>
+    <color name="theme_color">#424879</color>
 </resources>

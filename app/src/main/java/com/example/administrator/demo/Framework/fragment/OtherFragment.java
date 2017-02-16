@@ -10,7 +10,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.demo.Framework.BaseFragment;
-import com.example.administrator.demo.Framework.materialdesign.MaterialDesignDemo;
+import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
+import com.example.administrator.demo.Framework.materialdesign.recyclerview.RecyclerViewActivity;
+import com.example.administrator.demo.Framework.materialdesign.toolbar.ToolBarActivity;
+import com.example.administrator.demo.Framework.materialdesign.translucentsystembar.TranslucentSystemBarActivity;
 import com.example.administrator.demo.Main.utils.DataUtil;
 import com.example.administrator.demo.R;
 
@@ -33,8 +36,18 @@ public class OtherFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        startActivity(new Intent(getActivity(), MaterialDesignDemo.class));
+                        startActivity(new Intent(getActivity(), DrawerLayoutMainActivity.class));
                         break;
+                    case 1:
+                        startActivity(new Intent(getActivity(), TranslucentSystemBarActivity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(getActivity(), ToolBarActivity.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(getActivity(), RecyclerViewActivity.class));
+                        break;
+
                 }
             }
         });
@@ -43,7 +56,7 @@ public class OtherFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        /*MaterialDesignDemo*/
+        /*DrawerLayoutDemo*/
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_expandable_list_item_1, DataUtil.OTHER_DATA);
         mListView.setAdapter(adapter);
         Log.e(TAG, "其他数据初始化了...");

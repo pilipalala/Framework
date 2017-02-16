@@ -1,0 +1,82 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!-- //就是关掉这个Activity的透明背景-->
+    <style name="MainTheme" parent="AppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--背景透明，不设滑动关闭时背景就是黑的。-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--Activity右滑进出的动画，觉得这个不好看随便换成自己的-->
+        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AnimationFade">
+
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:windowEnterAnimation">@animator/in_lefttoright</item>
+        <item name="android:windowExitAnimation">@animator/out_righttoleft</item>
+    </style>
+
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@animator/fade_in</item>
+        <item name="android:windowExitAnimation">@animator/fade_out</item>
+    </style>
+
+    <style name="bottom_tag_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/bottom_textcolor_drawable_select</item>
+        <item name="android:button">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Toolbar主题设置-->
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColorSecondary">#ffffff</item>
+        <item name="android:colorBackground">#aa1FF003</item>
+
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item> <!--新增一个item，用于控制menu-->
+
+    </style>
+    <!--修改toolbar弹出菜单的位置-->
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    </style>
+
+    <!--修改toolbar菜单按钮的style-->
+    <style name="Theme.ToolBar.More" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.More</item>
+    </style>
+    <style name="ActionButton.Overflow.More" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@mipmap/icon_search</item>
+    </style>
+
+    <style name="ImageTranslucentTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+
+</resources>

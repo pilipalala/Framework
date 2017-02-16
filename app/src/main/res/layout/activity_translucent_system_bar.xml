@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/ImageTranslucentBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ImageTranslucentBarActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/ColorTranslucentBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ColorTranslucentBarActivity"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -15,7 +15,8 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".Framework.LauncherActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main"
+            android:theme="@style/ImageTranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -86,9 +87,26 @@
         <activity android:name=".Framework.okhttp.activity.CaiNiaoWoActivity" />
         <activity android:name=".Framework.youkumenu.YouKuMenuActivity" />
         <activity
-            android:name=".Framework.materialdesign.MaterialDesignDemo"
+            android:name=".Framework.materialdesign.drawerlayout.DrawerLayoutDemo"
             android:label="@string/title_activity_material_design_demo" />
-        <activity android:name=".Framework.guanggaotiao.GuangGaoTiaoActivity"></activity>
+        <activity android:name=".Framework.guanggaotiao.GuangGaoTiaoActivity" />
+        <activity android:name=".Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity" />
+        <activity android:name=".Framework.materialdesign.drawerlayout.DrawerLayout_BelowToolbarActivity" />
+        <activity
+            android:name=".Framework.materialdesign.drawerlayout.DrawerLayout_OtherActivity"
+            android:label="DrawerLayout+其他布局" />
+        <activity
+            android:name=".Framework.materialdesign.translucentsystembar.TranslucentSystemBarActivity"
+            android:label="@string/app_name"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
+            android:name=".Framework.materialdesign.translucentsystembar.ImageTranslucentBarActivity"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
+            android:name=".Framework.materialdesign.translucentsystembar.ColorTranslucentBarActivity"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity android:name=".Framework.materialdesign.toolbar.ToolBarActivity" />
+        <activity android:name=".Framework.materialdesign.recyclerview.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

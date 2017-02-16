@@ -52,9 +52,9 @@
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Toolbar主题设置-->
-    <style name="ToolBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <item name="android:textColorSecondary">#ffffff</item>
-        <!--<item name="android:colorBackground">#aa333333</item>-->
+        <item name="android:colorBackground">#aa1FF003</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item> <!--新增一个item，用于控制menu-->
 
     </style>
@@ -70,6 +70,11 @@
     <style name="ActionButton.Overflow.More" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
         <item name="android:src">@mipmap/icon_search</item>
     </style>
+
+    <style name="ImageTranslucentTheme" parent="AppTheme.NoActionBar">
+        <!--在Android 4.4之前的版本上运行，直接跟随系统主题-->
+    </style>
+
 
 
 

@@ -11,4 +11,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="action_share">Share</string>
+    <string name="below_toolbar">NavigationView在Toolbar下方  \n 大多数的APP都是使用NavigationView都是全屏的，当我们想让NavigationView在Toolbar下方的时候应该怎么做呢 xml布局中，DrawerLayout在T
+        oolbar的下方 \n Toolbar上不显示Home旋转开关按钮</string>
+
 </resources>
