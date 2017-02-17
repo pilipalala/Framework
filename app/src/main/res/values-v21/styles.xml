@@ -6,20 +6,22 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!--背景透明，不设滑动关闭时背景就是黑的。-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--Activity右滑进出的动画，觉得这个不好看随便换成自己的-->
+        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
+
+
     </style>
     <!-- //就是关掉这个Activity的透明背景-->
     <style name="MainTheme" parent="AppTheme">
         <item name="android:windowIsTranslucent">false</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <!--背景透明，不设滑动关闭时背景就是黑的。-->
-        <item name="android:windowIsTranslucent">true</item>
-        <!--Activity右滑进出的动画，觉得这个不好看随便换成自己的-->
-        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
-    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -46,13 +48,13 @@
         <item name="android:textColor">@drawable/bottom_textcolor_drawable_select</item>
         <item name="android:button">@android:color/transparent</item>
     </style>
-
+<!--
     <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
     <!-- Toolbar主题设置-->
-    <style name="ToolBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="ToolBarTheme" parent="AppTheme">
         <item name="android:textColorSecondary">#ffffff</item>
         <!--<item name="android:colorBackground">#aa333333</item>-->
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
@@ -74,11 +76,13 @@
         <item name="android:src">@mipmap/icon_search</item>
     </style>
 
-    <style name="ImageTranslucentTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="ImageTranslucentTheme" parent="AppTheme">
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 
