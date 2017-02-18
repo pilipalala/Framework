@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.demo.Framework.BaseFragment;
+import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.RecyclerViewActivity;
 import com.example.administrator.demo.Framework.materialdesign.toolbar.ToolBarActivity;
@@ -46,6 +47,9 @@ public class OtherFragment extends BaseFragment {
                         break;
                     case 3:
                         startActivity(new Intent(getActivity(), RecyclerViewActivity.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(getActivity(), MapsActivity.class));
                         break;
 
                 }

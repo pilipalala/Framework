@@ -20,7 +20,7 @@ public class BaseActivity extends AppCompatActivity {
                 .setSwipeSensitivity(0.5f)//对横向滑动手势的敏感程度。0为迟钝 1为敏感
                 //.setScrimColor(Color.BLUE)//底层阴影颜色
                 .setClosePercent(0.5f)//触发关闭Activity百分比
-//                .setSwipeRelateEnable(true)//是否与下一级activity联动(微信效果)。默认关
+                .setSwipeRelateEnable(true)//是否与下一级activity联动(微信效果)。默认关
                 .setSwipeRelateOffset(500)//activity联动时的偏移量。默认500px。
                 //.setDisallowInterceptTouchEvent(true)//不抢占事件，默认关（事件将先由子View处理再由滑动关闭处理）
                 /*.addListener(new SwipeListener() {

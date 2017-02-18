@@ -9,6 +9,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName '1.0.20170103'
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -18,12 +19,18 @@ android {
     }
     productFlavors {
     }
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
 }
 
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    /*分包*/
+    compile 'com.android.support:multidex:1.0.0'
     compile project(':okhttputils')
     compile project(':xutils')
     //eventbus
@@ -59,6 +66,8 @@ dependencies {
     compile 'jp.wasabeef:picasso-transformations:2.1.0'
     //FastJson JSON解析框架
     compile 'com.alibaba:fastjson:1.1.55.android'
+    // 添加之
+    compile 'com.google.android.gms:play-services:9.4.0'
 }
 repositories {
     jcenter()

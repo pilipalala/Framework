@@ -2,6 +2,7 @@ package com.example.administrator.demo.Framework;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 
 import com.antfortune.freeline.FreelineCore;
@@ -91,5 +92,10 @@ public class MyApplication extends Application {
     public int getScreenH(Context aty) {
         DisplayMetrics dm = aty.getResources().getDisplayMetrics();
         return dm.heightPixels;
+    }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }
