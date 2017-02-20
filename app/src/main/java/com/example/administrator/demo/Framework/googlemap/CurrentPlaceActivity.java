@@ -53,16 +53,16 @@ public class CurrentPlaceActivity extends BaseActivity implements GoogleApiClien
 
     @Override
     public void onConnected(Bundle bundle) {
-
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-
+        Log.i(TAG, "i"+i);
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
+        Log.i(TAG, "connectionResult"+connectionResult.toString());
 
     }
 }

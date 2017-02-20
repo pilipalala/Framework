@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.administrator.demo.R;
@@ -43,7 +44,7 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
         if (viewType == TYPE_NORMAL_ITEM) {
-            View view = layoutInflater.inflate(R.layout.recyclerview_normal_view, null);
+            View view = layoutInflater.inflate(R.layout.recyclerview_normal_view, parent, false);
             final NormalItmeViewHolder normalItmeViewHolder = new NormalItmeViewHolder(view);
             /*normalItmeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,10 +52,9 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                     listener.setOnItemClick(normalItmeViewHolder.itemView,normalItmeViewHolder.getLayoutPosition());
                 }
             });*/
-
             return normalItmeViewHolder;
         } else {
-            View view = layoutInflater.inflate(R.layout.recyclerview_footer_view, null);
+            View view = layoutInflater.inflate(R.layout.recyclerview_footer_view, parent, false);
             return new FooterViewHolder(view);
         }
 
@@ -75,10 +75,14 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             FooterViewHolder footerViewHolder = (FooterViewHolder) holder;
             switch (load_more_status) {
                 case PULLUP_LOAD_MORE:
+                    footerViewHolder.tvContent.setVisibility(View.VISIBLE);
                     footerViewHolder.tvContent.setText("上拉加载更多");
+                    footerViewHolder.progressBar.setVisibility(View.GONE);
                     break;
                 case LOADING_MORE:
-                    footerViewHolder.tvContent.setText("加载中...");
+                    footerViewHolder.tvContent.setVisibility(View.GONE);
+//                    footerViewHolder.tvContent.setText("加载中...");
+                    footerViewHolder.progressBar.setVisibility(View.VISIBLE);
                     break;
             }
         }
@@ -125,6 +129,9 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     class FooterViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.tv_content)
         TextView tvContent;
+        @Bind(R.id.progress_view)
+        ProgressBar progressBar;
+
         public FooterViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

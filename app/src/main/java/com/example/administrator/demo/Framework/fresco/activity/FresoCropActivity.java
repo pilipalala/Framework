@@ -115,6 +115,5 @@ public class FresoCropActivity extends BaseActivity {
 //        Uri uri = Uri.parse("res://包名(实际可以是任何字符串甚至留空)/" + R.drawable.ic_launcher);/**/
         Uri uri = Uri.parse("res:// /"+R.mipmap.mine);
         sdvFrescoCrop.setImageURI(uri);
-
     }
 }
