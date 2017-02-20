@@ -1,5 +1,6 @@
 package com.example.administrator.demo.Framework.materialdesign.recyclerview;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -124,6 +125,11 @@ public class RecyclerViewActivity extends BaseActivity {
         adapter.setOnItemClickListener(new PullMoreRecyclerAdapter.OnItemClickListener() {
             @Override
             public void setOnItemClick(View itemView, int position) {
+                if (position % 3 == 0) {
+                    startActivity(new Intent(RecyclerViewActivity.this, RecyclerViewDetailActivity.class));
+                }else if (position % 3 == 1) {
+                    startActivity(new Intent(RecyclerViewActivity.this, XiTuActivity.class));
+                }
                 Toast.makeText(RecyclerViewActivity.this, position + "\n" + data.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });

@@ -113,8 +113,10 @@
             android:theme="@style/ImageTranslucentTheme" />
         <activity android:name=".Framework.materialdesign.toolbar.ToolBarActivity" />
         <activity android:name=".Framework.materialdesign.recyclerview.RecyclerViewActivity" />
-        <activity android:name=".Framework.googlemap.MapsActivity"></activity>
-        <activity android:name=".Framework.googlemap.CurrentPlaceActivity"></activity>
+        <activity android:name=".Framework.googlemap.MapsActivity" />
+        <activity android:name=".Framework.googlemap.CurrentPlaceActivity" />
+        <activity android:name=".Framework.materialdesign.recyclerview.RecyclerViewDetailActivity" />
+        <activity android:name=".Framework.materialdesign.recyclerview.XiTuActivity"></activity>
     </application>
 
 </manifest>
