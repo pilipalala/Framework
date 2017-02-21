@@ -46,7 +46,7 @@ public class OtherFragment extends BaseFragment {
                         startActivity(new Intent(getActivity(), ToolBarActivity.class));
                         break;
                     case 3:
-                        startActivity(new Intent(getActivity(), RecyclerViewActivity.class));
+                        startActivity(new Intent(getActivity(),  RecyclerViewActivity.class));
                         break;
                     case 4:
                         startActivity(new Intent(getActivity(), MapsActivity.class));

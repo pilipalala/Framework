@@ -31,8 +31,6 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class XiTuActivity extends BaseActivity {
-
-
     @Bind(R.id.head_iv)
     ImageView headIv;
     @Bind(R.id.one)
@@ -63,13 +61,15 @@ public class XiTuActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xi_tu);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        fragments = new ArrayList<>();
 
+        fragments = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             fragments.add(new MyFragment(tabTitles[i], 5 + i));
         }
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,8 +77,6 @@ public class XiTuActivity extends BaseActivity {
                 onBackPressed();
             }
         });
-        toolbarTab.setupWithViewPager(mainVpContainer);
-        mainVpContainer.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), fragments));
         appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
@@ -89,6 +87,17 @@ public class XiTuActivity extends BaseActivity {
                 }
             }
         });
+        mainVpContainer.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), fragments));
+        //tablayout和viewpager建立联系为什么不用下面这个方法呢？自己去研究一下，可能收获更多
+//        toolbarTab.setupWithViewPager(mainVpContainer);
+
+        mainVpContainer.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener
+                (toolbarTab));
+        toolbarTab.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener
+                (mainVpContainer));
+
+
+
         loadBlurAndSetStatusBar();
         Glide.with(this).load(R.mipmap.head).bitmapTransform(new RoundedCornersTransformation(this,
                 90, 0)).into(headIv);

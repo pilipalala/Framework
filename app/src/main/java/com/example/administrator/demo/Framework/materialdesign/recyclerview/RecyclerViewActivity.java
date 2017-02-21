@@ -44,6 +44,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
     private void initView() {
         toolbar.setTitle("RecycleView");
+        toolbar.setTitleTextColor(Color.WHITE);
         adapter = new PullMoreRecyclerAdapter(this, getData());
         rvRecycleview.setAdapter(adapter);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
