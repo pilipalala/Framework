@@ -24,24 +24,19 @@ public class MyFragment extends Fragment {
     private static final String TAG = "MyFragment";
     private final String title;
 
-    public String getContent() {
-        return content;
-    }
 
     public String getTitle() {
         return title;
     }
 
     TextView textView;
-    private final String content;
     private final int num;
     private RecyclerView myRecyclerView;
     private Context mContext;
 
     @SuppressLint("ValidFragment")
-    public MyFragment(String title, String content,int num) {
+    public MyFragment(String title,int num) {
         this.title = title;
-        this.content = content;
         this.num = num;
     }
 

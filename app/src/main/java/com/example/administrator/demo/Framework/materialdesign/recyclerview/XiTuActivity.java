@@ -6,19 +6,24 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.demo.Framework.BaseActivity;
+import com.example.administrator.demo.Framework.tablayout.adapter.ViewPagerAdapter;
+import com.example.administrator.demo.Framework.tablayout.fragment.MyFragment;
 import com.example.administrator.demo.R;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,35 +32,44 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class XiTuActivity extends BaseActivity {
 
+
+    @Bind(R.id.head_iv)
+    ImageView headIv;
     @Bind(R.id.one)
     LinearLayout one;
     @Bind(R.id.two)
     LinearLayout two;
     @Bind(R.id.three)
     LinearLayout three;
+    @Bind(R.id.head_layout)
+    LinearLayout headLayout;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.collapsing_toolbar)
     CollapsingToolbarLayout collapsingToolbar;
+    @Bind(R.id.toolbar_tab)
+    TabLayout toolbarTab;
     @Bind(R.id.appBar)
     AppBarLayout appBar;
-    @Bind(R.id.tv_detail)
-    TextView tvDetail;
+    @Bind(R.id.main_vp_container)
+    ViewPager mainVpContainer;
     @Bind(R.id.root_layout)
     CoordinatorLayout rootLayout;
-    @Bind(R.id.head_layout)
-    LinearLayout headLayout;
-    @Bind(R.id.head_iv)
-    ImageView headIv;
+    private ArrayList<MyFragment> fragments;
+    private String[] tabTitles = new String[]{"", "分享", "收藏", "关注", "关注者"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xi_tu);
         ButterKnife.bind(this);
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        fragments = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            fragments.add(new MyFragment(tabTitles[i], 5 + i));
+        }
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +77,8 @@ public class XiTuActivity extends BaseActivity {
                 onBackPressed();
             }
         });
+        toolbarTab.setupWithViewPager(mainVpContainer);
+        mainVpContainer.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), fragments));
         appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
@@ -76,6 +92,8 @@ public class XiTuActivity extends BaseActivity {
         loadBlurAndSetStatusBar();
         Glide.with(this).load(R.mipmap.head).bitmapTransform(new RoundedCornersTransformation(this,
                 90, 0)).into(headIv);
+
+
     }
 
     /**
@@ -100,6 +118,7 @@ public class XiTuActivity extends BaseActivity {
                     }
                 });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.base_toolbar_menu, menu);

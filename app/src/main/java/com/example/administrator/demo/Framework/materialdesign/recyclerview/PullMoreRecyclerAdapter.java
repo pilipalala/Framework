@@ -25,7 +25,7 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     private LayoutInflater layoutInflater;
     private static final int TYPE_NORMAL_ITEM = 0;  //普通Item
     private static final int TYPE_FOOTER_ITEM = 1;  //底部FooterView
-    private int load_more_status = 0; //默认为0
+    private int load_more_status = 1; //默认为1
     //上拉加载更多
     public static final int PULLUP_LOAD_MORE = 1;
     //正在加载中
@@ -40,9 +40,10 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         layoutInflater = LayoutInflater.from(context);
     }
 
-
+    //创建新View，被LayoutManager所调用
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
+        //如果viewType是普通item返回普通的布局，否则是底部布局并返回
         if (viewType == TYPE_NORMAL_ITEM) {
             View view = layoutInflater.inflate(R.layout.recyclerview_normal_view, parent, false);
             final NormalItmeViewHolder normalItmeViewHolder = new NormalItmeViewHolder(view);
@@ -59,7 +60,7 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
 
     }
-
+    //将数据与界面进行绑定的操作
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof NormalItmeViewHolder) {
@@ -125,7 +126,9 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         notifyDataSetChanged();
     }
 
-
+    /**
+     * 底部FooterView布局
+     */
     class FooterViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.tv_content)
         TextView tvContent;
@@ -138,7 +141,7 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
     }
 
-
+    //自定义的ViewHolder，持有每个Item的的所有界面元素
     class NormalItmeViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.iv_pullmorerecycle)
         ImageView ivPullmorerecycle;

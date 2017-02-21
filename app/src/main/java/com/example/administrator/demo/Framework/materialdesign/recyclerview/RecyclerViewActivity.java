@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class RecyclerViewActivity extends BaseActivity {
     RecyclerView rvRecycleview;
     @Bind(R.id.spl_refresh)
     SwipeRefreshLayout splRefresh;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
     private PullMoreRecyclerAdapter adapter;
     private List<CardInfo> data = new ArrayList<CardInfo>();
     ;
@@ -40,6 +43,7 @@ public class RecyclerViewActivity extends BaseActivity {
     }
 
     private void initView() {
+        toolbar.setTitle("RecycleView");
         adapter = new PullMoreRecyclerAdapter(this, getData());
         rvRecycleview.setAdapter(adapter);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -127,7 +131,7 @@ public class RecyclerViewActivity extends BaseActivity {
             public void setOnItemClick(View itemView, int position) {
                 if (position % 3 == 0) {
                     startActivity(new Intent(RecyclerViewActivity.this, RecyclerViewDetailActivity.class));
-                }else if (position % 3 == 1) {
+                } else if (position % 3 == 1) {
                     startActivity(new Intent(RecyclerViewActivity.this, XiTuActivity.class));
                 }
                 Toast.makeText(RecyclerViewActivity.this, position + "\n" + data.get(position).getTitle(), Toast.LENGTH_SHORT).show();
