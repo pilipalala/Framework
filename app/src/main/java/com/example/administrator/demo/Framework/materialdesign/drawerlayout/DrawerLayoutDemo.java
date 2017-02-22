@@ -1,12 +1,10 @@
 package com.example.administrator.demo.Framework.materialdesign.drawerlayout;
 
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,7 +13,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -29,7 +26,6 @@ public class DrawerLayoutDemo extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        translucentStatusBar();
         setContentView(R.layout.activity_drawer_layout_demo);
 
 
@@ -136,21 +132,5 @@ public class DrawerLayoutDemo extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    /**
-     * 实现5.0以上状态栏透明(默认状态是半透明)
-     */
-    private void translucentStatusBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ViewGroup decorView = (ViewGroup) getWindow().getDecorView();
-            int option =
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            decorView.setSystemUiVisibility(option);
-            getWindow().setStatusBarColor(ContextCompat.getColor(
-                            getApplicationContext(),
-                            R.color.white
-                    )
-            );
-        }
 
-    }
 }

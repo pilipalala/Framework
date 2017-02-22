@@ -31,7 +31,6 @@ public class RecyclerViewActivity extends BaseActivity {
     Toolbar toolbar;
     private PullMoreRecyclerAdapter adapter;
     private List<CardInfo> data = new ArrayList<CardInfo>();
-    ;
     private LinearLayoutManager layoutManager;
 
     @Override
@@ -41,6 +40,8 @@ public class RecyclerViewActivity extends BaseActivity {
         ButterKnife.bind(this);
         initView();
     }
+
+
 
     private void initView() {
         toolbar.setTitle("RecycleView");

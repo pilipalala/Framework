@@ -29,7 +29,7 @@ public class GuangGaoTiaoActivity extends BaseActivity {
             R.mipmap.b,
             R.mipmap.c,
             R.mipmap.d,
-            R.mipmap.e };
+            R.mipmap.e};
     // 图片标题集合
     private final String[] imageDescriptions = {
             "尚硅谷波河争霸赛！",
@@ -93,8 +93,9 @@ public class GuangGaoTiaoActivity extends BaseActivity {
     private class MyViewPagerListener implements ViewPager.OnPageChangeListener {
         /**
          * 当页面滚动了的时候回调这个方法
-         * @param position  当前页面的位置
-         * @param positionOffset 滑动页面的百分比
+         *
+         * @param position             当前页面的位置
+         * @param positionOffset       滑动页面的百分比
          * @param positionOffsetPixels 在屏幕上滑动的像素
          */
         @Override
@@ -104,16 +105,17 @@ public class GuangGaoTiaoActivity extends BaseActivity {
 
         /**
          * 当页面被选中了的时候
+         *
          * @param position 被选中页面的位置
          */
         @Override
         public void onPageSelected(int position) {
             //设置对应页面的文本信息
-            text.setText(imageDescriptions[position]);
-            llPoint.getChildAt(position).setEnabled(true);
+            text.setText(imageDescriptions[position%imageViewList.size()]);
+            llPoint.getChildAt(position%imageViewList.size()).setEnabled(true);
             llPoint.getChildAt(prePostion).setEnabled(false);
 
-            prePostion = position;
+            prePostion = position%imageViewList.size();
         }
 
         /**

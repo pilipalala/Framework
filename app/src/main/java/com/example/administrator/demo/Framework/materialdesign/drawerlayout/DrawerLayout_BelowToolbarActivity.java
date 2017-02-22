@@ -1,5 +1,6 @@
 package com.example.administrator.demo.Framework.materialdesign.drawerlayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -7,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -41,6 +43,7 @@ public class DrawerLayout_BelowToolbarActivity extends AppCompatActivity impleme
         //这是不带Home旋转开关按钮
 //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
+        drawerLayout.setScrimColor(Color.TRANSPARENT);//去除左右抽屉划出后内容显示页背景的灰色
         toggle.syncState();//该方法会自动和Toolbar关联, 将开关的图片显示在了Toolbar上
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -67,9 +70,9 @@ public class DrawerLayout_BelowToolbarActivity extends AppCompatActivity impleme
     /**
      * 显示toolbar右上方三个点
     * */
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.material_design_demo, menu);
         return true;
-    }*/
+    }
 }

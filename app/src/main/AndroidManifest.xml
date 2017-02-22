@@ -115,10 +115,13 @@
         <activity android:name=".Framework.materialdesign.recyclerview.RecyclerViewActivity" />
         <activity android:name=".Framework.googlemap.MapsActivity" />
         <activity android:name=".Framework.googlemap.CurrentPlaceActivity" />
-        <activity android:name=".Framework.materialdesign.recyclerview.RecyclerViewDetailActivity"
-            android:theme="@style/ImageTranslucentTheme"/>
-        <activity android:name=".Framework.materialdesign.recyclerview.XiTuActivity"
-            android:theme="@style/ImageTranslucentTheme"></activity>
+        <activity
+            android:name=".Framework.materialdesign.recyclerview.RecyclerViewDetailActivity"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity
+            android:name=".Framework.materialdesign.recyclerview.XiTuActivity"
+            android:theme="@style/ImageTranslucentTheme" />
+        <activity android:name=".Framework.materialdesign.recyclerview.StyleActivity"></activity>
     </application>
 
 </manifest>

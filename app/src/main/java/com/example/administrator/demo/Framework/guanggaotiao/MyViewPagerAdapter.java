@@ -32,7 +32,7 @@ public class MyViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         Log.e(TAG, "instantiateItem--->position: " + position + "--->container" + container);
-        ImageView imageView = imageViewList.get(position);
+        ImageView imageView = imageViewList.get(position % imageViewList.size());
         container.addView(imageView); //添加到ViewPager中
         return imageView;
     }
@@ -40,7 +40,7 @@ public class MyViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return imageViewList == null ? 0 : imageViewList.size();
+        return imageViewList == null ? 0 : Integer.MAX_VALUE;
     }
 
     /**

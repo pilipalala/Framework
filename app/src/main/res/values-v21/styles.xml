@@ -42,7 +42,7 @@
     </style>
 
     <!-- Toolbar主题设置-->
-    <style name="ToolBarTheme" parent="AppTheme">
+    <style name="ToolBarTheme" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
         <!--<item name="android:textColorSecondary">#ffffff</item>-->
         <!--<item name="android:colorBackground">#aa333333</item>-->
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
@@ -56,7 +56,7 @@
     </style>
 
     <!--修改toolbar菜单按钮的style-->
-    <style name="Theme.ToolBar.More" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="Theme.ToolBar.More" parent="ThemeOverlay.AppCompat.Dark">
         <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.More</item>
     </style>
 

@@ -13,6 +13,7 @@ import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.RecyclerViewActivity;
+import com.example.administrator.demo.Framework.materialdesign.recyclerview.StyleActivity;
 import com.example.administrator.demo.Framework.materialdesign.toolbar.ToolBarActivity;
 import com.example.administrator.demo.Framework.materialdesign.translucentsystembar.TranslucentSystemBarActivity;
 import com.example.administrator.demo.Main.utils.DataUtil;
@@ -51,7 +52,9 @@ public class OtherFragment extends BaseFragment {
                     case 4:
                         startActivity(new Intent(getActivity(), MapsActivity.class));
                         break;
-
+                    case 5:
+                        startActivity(new Intent(getActivity(), StyleActivity.class));
+                        break;
                 }
             }
         });
@@ -65,6 +68,7 @@ public class OtherFragment extends BaseFragment {
         mListView.setAdapter(adapter);
         Log.e(TAG, "其他数据初始化了...");
         super.initData();
+
 
     }
 }
