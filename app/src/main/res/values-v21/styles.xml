@@ -2,25 +2,28 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <!--Toolbar背景颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <!--通知栏颜色-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--RadioButton EditText光标颜色 -->
         <item name="colorAccent">@color/colorAccent</item>
+
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
         <!--背景透明，不设滑动关闭时背景就是黑的。-->
         <item name="android:windowIsTranslucent">true</item>
         <!--Activity右滑进出的动画，觉得这个不好看随便换成自己的-->
         <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
 
     </style>
-    <!-- //就是关掉这个Activity的透明背景-->
+    <!-- 就是关掉这个Activity的透明背景-->
     <style name="MainTheme" parent="AppTheme">
         <item name="android:windowIsTranslucent">false</item>
     </style>
 
     <style name="AnimationFade">
-
         <!-- PopupWindow左右弹出的效果 -->
         <item name="android:windowEnterAnimation">@animator/in_lefttoright</item>
         <item name="android:windowExitAnimation">@animator/out_righttoleft</item>
@@ -43,12 +46,23 @@
 
     <!-- Toolbar主题设置-->
     <style name="ToolBarTheme" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
-        <!--<item name="android:textColorSecondary">#ffffff</item>-->
-        <!--<item name="android:colorBackground">#aa333333</item>-->
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
-        <!--新增一个item，用于控制menu-->
+        <!--对应的就是右上角三个圆点的颜色-->
+        <item name="android:textColorSecondary">#FFF000</item>
+        <!--Toolbar 标题文字颜色-->
+        <item name="android:textColorPrimary">@color/white</item>
 
     </style>
+    <!-- Toolbar菜单设置-->
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <!--新增一个item，用于控制menu-->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <!--Toolbar 菜单样式 菜单字体颜色-->
+        <item name="android:actionMenuTextColor">@color/recoveryColorPrimaryDark</item>
+        <!--Toolbar 菜单样式 菜单背景颜色-->
+        <item name="android:colorBackground">@color/theme_color</item>
+    </style>
+
+
     <!--修改toolbar弹出菜单的位置-->
     <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
         <item name="overlapAnchor">false</item>

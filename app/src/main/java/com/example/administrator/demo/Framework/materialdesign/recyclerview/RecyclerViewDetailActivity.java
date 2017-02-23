@@ -1,5 +1,6 @@
 package com.example.administrator.demo.Framework.materialdesign.recyclerview;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -34,16 +35,23 @@ public class RecyclerViewDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_detail);
         ButterKnife.bind(this);
-
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.mipmap.back_ib);
         }
-        collapsingToolbar.setTitle("噼里啪啦");
+        initToolbarLayout();
+
         Glide.with(this).load(R.mipmap.atguigu_logo).into(ivDetail);
         tvDetail.setText(generateDetailContent("噼里啪啦"));
+    }
+    private void initToolbarLayout() {
+        collapsingToolbar.setTitle("噼里啪啦");
+        collapsingToolbar.setTitle("CollapsingToolbarLayout");
+        //通过CollapsingToolbarLayout修改字体颜色
+        collapsingToolbar.setExpandedTitleColor(Color.WHITE);//设置还没收缩时状态下字体颜色
+        collapsingToolbar.setCollapsedTitleTextColor(Color.GREEN);//设置收缩后Toolbar上字体的颜色
     }
 
     public String generateDetailContent(String str) {

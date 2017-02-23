@@ -45,7 +45,12 @@ public class RecyclerViewActivity extends BaseActivity {
 
     private void initView() {
         toolbar.setTitle("RecycleView");
-        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         adapter = new PullMoreRecyclerAdapter(this, getData());
         rvRecycleview.setAdapter(adapter);
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -135,6 +140,8 @@ public class RecyclerViewActivity extends BaseActivity {
                     startActivity(new Intent(RecyclerViewActivity.this, RecyclerViewDetailActivity.class));
                 } else if (position % 3 == 1) {
                     startActivity(new Intent(RecyclerViewActivity.this, XiTuActivity.class));
+                }else if (position % 3 == 2) {
+                    startActivity(new Intent(RecyclerViewActivity.this, PaletteActivity.class));
                 }
                 Toast.makeText(RecyclerViewActivity.this, position + "\n" + data.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }

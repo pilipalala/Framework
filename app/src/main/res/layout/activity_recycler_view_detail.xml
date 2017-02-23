@@ -22,7 +22,7 @@
             app:contentScrim="#50FFFFFF"
             app:expandedTitleMarginEnd="48dp"
             app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <ImageView
                 android:id="@+id/iv_detail"

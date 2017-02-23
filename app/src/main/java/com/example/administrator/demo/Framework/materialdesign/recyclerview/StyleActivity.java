@@ -1,7 +1,6 @@
 package com.example.administrator.demo.Framework.materialdesign.recyclerview;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -48,9 +47,9 @@ public class StyleActivity extends BaseActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b == true) {
                     Toast.makeText(StyleActivity.this, "night", Toast.LENGTH_SHORT).show();
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 }
                 recreate();
             }

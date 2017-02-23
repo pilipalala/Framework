@@ -66,11 +66,12 @@ dependencies {
     compile 'jp.wasabeef:picasso-transformations:2.1.0'
     //FastJson JSON解析框架
     compile 'com.alibaba:fastjson:1.1.55.android'
-    // 添加之
+    // 添加之谷歌地图
     compile 'com.google.android.gms:play-services:9.4.0'
 
-
-    compile 'com.jaeger.statusbaruitl:library:1.3.5'
+//    compile 'com.jaeger.statusbaruitl:library:1.3.5'//这是一个为Android App 设置状态栏的工具类， 可以在4.4及其以上系统中实现 沉浸式状态栏/状态栏变色，支持设置状态栏透明度
+//    palette
+    compile 'com.android.support:palette-v7:24.2.1'
 }
 repositories {
     jcenter()

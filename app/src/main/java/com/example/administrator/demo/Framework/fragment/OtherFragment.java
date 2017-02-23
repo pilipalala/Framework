@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
+import com.example.administrator.demo.Framework.materialdesign.recyclerview.BottomSheetActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.RecyclerViewActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.StyleActivity;
 import com.example.administrator.demo.Framework.materialdesign.toolbar.ToolBarActivity;
@@ -55,6 +56,10 @@ public class OtherFragment extends BaseFragment {
                     case 5:
                         startActivity(new Intent(getActivity(), StyleActivity.class));
                         break;
+                    case 6:
+                        startActivity(new Intent(getActivity(), BottomSheetActivity.class));
+                        break;
+
                 }
             }
         });

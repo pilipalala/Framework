@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.administrator.demo.Framework.materialdesign.recyclerview.PaletteActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.RecyclerViewDetailActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.XiTuActivity;
 import com.example.administrator.demo.R;
@@ -46,6 +47,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     mContext.startActivity(new Intent(mContext, RecyclerViewDetailActivity.class));
                 } else if (position % 3 == 1) {
                     mContext.startActivity(new Intent(mContext, XiTuActivity.class));
+                } else if (position % 3 == 2) {
+                    mContext.startActivity(new Intent(mContext, PaletteActivity.class));
                 }
 
             }

@@ -38,7 +38,7 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initData();
     }
-/*当子类需要初始化数据，或者联网请求绑定数据，展示数据的 */
+    /*当子类需要初始化数据，或者联网请求绑定数据，展示数据的 */
     protected void initData(){
 
     }

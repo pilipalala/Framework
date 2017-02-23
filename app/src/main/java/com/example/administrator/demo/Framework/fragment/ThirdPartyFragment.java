@@ -30,6 +30,5 @@ public class ThirdPartyFragment extends BaseFragment {
         super.initData();
         Log.e(TAG, "第三方控件数据初始化了...");
         textView.setText("第三方框架的世界！！！");
-
     }
 }
