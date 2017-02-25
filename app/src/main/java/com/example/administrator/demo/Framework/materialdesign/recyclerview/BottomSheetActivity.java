@@ -23,6 +23,8 @@ import butterknife.OnClick;
 
 public class BottomSheetActivity extends BaseActivity {
 
+
+    BottomSheetBehavior behavior;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.button0)
@@ -31,13 +33,9 @@ public class BottomSheetActivity extends BaseActivity {
     Button button1;
     @Bind(R.id.button2)
     Button button2;
-    @Bind(R.id.tv)
-    TextView tv;
     @Bind(R.id.bottom_sheet)
     NestedScrollView bottomSheet;
-    BottomSheetBehavior behavior;
-    Button bsdButton;
-    TextView bsdText;
+
     private String TAG = BottomSheetActivity.class.getSimpleName();
 
     @Override
@@ -84,7 +82,7 @@ public class BottomSheetActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.button0, R.id.button1, R.id.button2, R.id.bsd_button})
+    @OnClick({R.id.button0, R.id.button1, R.id.button2})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button0:
@@ -97,10 +95,11 @@ public class BottomSheetActivity extends BaseActivity {
             case R.id.button1:
                 final BottomSheetDialog dialog = new BottomSheetDialog(this);
                 View inflate = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
-//                ButterKnife.bind(this,inflate);
                 dialog.setContentView(inflate);
-                bsdButton = (Button) inflate.findViewById(R.id.bsd_button);
-                bsdText = (TextView) inflate.findViewById(R.id.bsd_text);
+                Button bsdButton = (Button) inflate.findViewById(R.id.bsd_button);
+                TextView textView = (TextView) inflate.findViewById(R.id.bsd_text);
+
+                textView.setText("BottomSheetDialog");
                 bsdButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -112,6 +111,7 @@ public class BottomSheetActivity extends BaseActivity {
                 dialog.setCanceledOnTouchOutside(false);
                 break;
             case R.id.button2:
+                new FullSheetDialogFragment().show(getSupportFragmentManager(),"dialog");
                 break;
         }
     }
@@ -121,13 +121,17 @@ public class BottomSheetActivity extends BaseActivity {
         float X_UP = 0, Y_UP = 0, X_DOWN = 0, Y_DOWN = 0;
         int touchEvent = event.getAction();
         switch (touchEvent) {
-            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_POINTER_DOWN:
                 display("动作按下");
                 X_DOWN = event.getX();
+                Log.e(TAG, "X_DOWN: " + X_DOWN);
+                Log.e(TAG, "Y_DOWN: " + Y_DOWN);
                 Y_DOWN = event.getY();
                 break;
-            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_POINTER_UP:
                 display("动作按上");
+                Log.e(TAG, "X_UP: " + X_UP);
+                Log.e(TAG, "Y_UP: " + Y_UP);
                 X_UP = event.getX();
                 Y_UP = event.getY();
                 break;
@@ -138,16 +142,16 @@ public class BottomSheetActivity extends BaseActivity {
                 break;
         }
         if (X_DOWN > X_UP) {
-            display("向左滑动");
+//            display("向左滑动");
         }
         if (X_DOWN < X_UP) {
-            display("向左滑动");
+//            display("向左滑动");
         }
         if (Y_DOWN > Y_UP) {
-            display("向下滑动");
+//            display("向下滑动");
         }
         if (Y_DOWN < Y_UP) {
-            display("向上滑动");
+//            display("向上滑动");
         }
         return super.onTouchEvent(event);
 
