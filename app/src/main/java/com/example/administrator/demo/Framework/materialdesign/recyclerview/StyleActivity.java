@@ -5,10 +5,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import com.example.administrator.demo.Framework.BaseActivity;
 import com.example.administrator.demo.R;
@@ -40,18 +38,6 @@ public class StyleActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 finish();
-            }
-        });
-        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b == true) {
-                    Toast.makeText(StyleActivity.this, "night", Toast.LENGTH_SHORT).show();
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                } else {
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                }
-                recreate();
             }
         });
     }

@@ -3,6 +3,7 @@
     package="com.example.administrator.demo">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -132,7 +133,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".Framework.materialdesign.recyclerview.BottomSheetActivity" />
-        <activity android:name=".Framework.materialdesign.recyclerview.FullSheetDialogFragment"></activity>
+        <activity android:name=".Framework.materialdesign.recyclerview.FullSheetDialogFragment" />
+        <activity android:name=".Framework.HeadimageScaleActivity"></activity>
     </application>
 
 </manifest>

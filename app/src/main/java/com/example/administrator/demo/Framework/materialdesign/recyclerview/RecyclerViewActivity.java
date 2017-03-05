@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.administrator.demo.Framework.BaseActivity;
+import com.example.administrator.demo.Framework.HeadimageScaleActivity;
 import com.example.administrator.demo.R;
 
 import java.util.ArrayList;
@@ -40,7 +41,6 @@ public class RecyclerViewActivity extends BaseActivity {
         ButterKnife.bind(this);
         initView();
     }
-
 
 
     private void initView() {
@@ -136,12 +136,14 @@ public class RecyclerViewActivity extends BaseActivity {
         adapter.setOnItemClickListener(new PullMoreRecyclerAdapter.OnItemClickListener() {
             @Override
             public void setOnItemClick(View itemView, int position) {
-                if (position % 3 == 0) {
+                if (position % 5 == 0) {
                     startActivity(new Intent(RecyclerViewActivity.this, RecyclerViewDetailActivity.class));
-                } else if (position % 3 == 1) {
+                } else if (position % 5 == 1) {
                     startActivity(new Intent(RecyclerViewActivity.this, XiTuActivity.class));
-                }else if (position % 3 == 2) {
+                } else if (position % 5 == 2) {
                     startActivity(new Intent(RecyclerViewActivity.this, PaletteActivity.class));
+                }else if (position % 5 == 3) {
+                    startActivity(new Intent(RecyclerViewActivity.this, HeadimageScaleActivity.class));
                 }
                 Toast.makeText(RecyclerViewActivity.this, position + "\n" + data.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
