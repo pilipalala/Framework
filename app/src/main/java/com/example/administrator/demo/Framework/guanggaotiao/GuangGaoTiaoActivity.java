@@ -1,10 +1,16 @@
 package com.example.administrator.demo.Framework.guanggaotiao;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.demo.Framework.BaseActivity;
 import com.example.administrator.demo.R;
@@ -39,6 +45,21 @@ public class GuangGaoTiaoActivity extends BaseActivity {
             "平均起薪11345元"
     };
     private int prePostion = 0;
+    MyViewPagerAdapter adapter;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            int item = ggViewpager.getCurrentItem() + 1;
+            ggViewpager.setCurrentItem(item);
+
+            /*延迟发消息*/
+            handler.sendEmptyMessageDelayed(0, 4000);
+
+        }
+    };
+    private boolean isDragging = false;
 
 
     /**
@@ -81,12 +102,53 @@ public class GuangGaoTiaoActivity extends BaseActivity {
             point.setLayoutParams(params);
             llPoint.addView(point);
         }
-        MyViewPagerAdapter adapter = new MyViewPagerAdapter(this, imageViewList);
+        adapter = new MyViewPagerAdapter(this, imageViewList);
         //设置适配器（PagerAdapter）
         ggViewpager.setAdapter(adapter);
+
+        /*设置中间位置*/
+        int item = Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 % imageViewList.size();//要保证是图片个数
+        ggViewpager.setCurrentItem(item);
+
         text.setText(imageDescriptions[prePostion]);
+
         /*设置viewPager页面监听*/
         ggViewpager.addOnPageChangeListener(new MyViewPagerListener());
+
+        adapter.onClickListener(new MyViewPagerAdapter.setClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Toast.makeText(GuangGaoTiaoActivity.this, imageDescriptions[position], Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        adapter.onTouchListener(new MyViewPagerAdapter.setTouchListener() {
+            @Override
+            public void onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN://按下
+                        Log.e("onTouchListener", "onTouch: " + "按下");
+                        handler.removeCallbacksAndMessages(null);
+                        break;
+                    case MotionEvent.ACTION_UP://离开
+                        Log.e("onTouchListener", "onTouch: " + "离开");
+                        handler.removeCallbacksAndMessages(null);
+                        handler.sendEmptyMessageDelayed(0, 3000);
+                        break;
+                    case MotionEvent.ACTION_MOVE://移动
+                        Log.e("onTouchListener", "onTouch: " + "移动");
+                        break;
+                    case MotionEvent.ACTION_CANCEL://取消
+                        Log.e("onTouchListener", "onTouch: " + "取消");
+//                        handler.removeCallbacksAndMessages(null);
+//                        handler.sendEmptyMessageDelayed(0, 3000);
+                        break;
+                }
+            }
+        });
+
+        /*发消息*/
+        handler.sendEmptyMessageDelayed(0, 3000);
 
     }
 
@@ -111,11 +173,13 @@ public class GuangGaoTiaoActivity extends BaseActivity {
         @Override
         public void onPageSelected(int position) {
             //设置对应页面的文本信息
-            text.setText(imageDescriptions[position%imageViewList.size()]);
-            llPoint.getChildAt(position%imageViewList.size()).setEnabled(true);
+            text.setText(imageDescriptions[position % imageViewList.size()]);
+            /*当前的设置为高亮*/
+            llPoint.getChildAt(position % imageViewList.size()).setEnabled(true);
+            /*把上一个设置为灰色*/
             llPoint.getChildAt(prePostion).setEnabled(false);
 
-            prePostion = position%imageViewList.size();
+            prePostion = position % imageViewList.size();
         }
 
         /**
@@ -128,7 +192,26 @@ public class GuangGaoTiaoActivity extends BaseActivity {
          */
         @Override
         public void onPageScrollStateChanged(int state) {
+            if (state == ViewPager.SCROLL_STATE_DRAGGING) {//拖拽
+                handler.removeCallbacksAndMessages(null);
+                Log.e("onTouchListener", "onTouch: " + "/拖拽");
+                isDragging = true;
+            } else if (state == ViewPager.SCROLL_STATE_SETTLING) {//滑动
+                Log.e("onTouchListener", "onTouch: " + "/滑动");
+
+            } else if (state == ViewPager.SCROLL_STATE_IDLE&&isDragging) {//静止
+                isDragging = false;
+                Log.e("onTouchListener", "onTouch: " + "/静止");
+                handler.removeCallbacksAndMessages(null);
+                handler.sendEmptyMessageDelayed(0, 3000);
+            }
 
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
     }
 }

@@ -3,6 +3,7 @@ package com.example.administrator.demo.Framework.guanggaotiao;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,6 +17,16 @@ public class MyViewPagerAdapter extends PagerAdapter {
     private String TAG = GuangGaoTiaoActivity.class.getName();
     private ArrayList<ImageView> imageViewList;
     private Context context;
+    private setTouchListener touchListener;
+    private setClickListener clickListener;
+
+    public interface setTouchListener {
+        public void onTouch(View view, MotionEvent motionEvent);
+    }
+
+    public interface setClickListener {
+        public void onClick(View view, int position);
+    }
 
     public MyViewPagerAdapter(Context context, ArrayList<ImageView> imageViewList) {
         this.context = context;
@@ -30,11 +41,34 @@ public class MyViewPagerAdapter extends PagerAdapter {
      * @return
      */
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         Log.e(TAG, "instantiateItem--->position: " + position + "--->container" + container);
         ImageView imageView = imageViewList.get(position % imageViewList.size());
         container.addView(imageView); //添加到ViewPager中
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickListener.onClick(view, position % imageViewList.size());
+            }
+        });
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                touchListener.onTouch(view, motionEvent);
+                return false;
+            }
+        });
+
         return imageView;
+    }
+
+    public void onTouchListener(setTouchListener touchListener) {
+        this.touchListener = touchListener;
+    }
+
+    public void onClickListener(setClickListener clickListener) {
+        this.clickListener = clickListener;
+
     }
 
 
