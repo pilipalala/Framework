@@ -65,13 +65,6 @@
         <item name="overlapAnchor">false</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
     </style>
 
-    <!--修改toolbar菜单按钮的style-->
-    <style name="Theme.ToolBar.More" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.More</item>
-    </style>
-    <style name="ActionButton.Overflow.More" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
-        <item name="android:src">@mipmap/icon_search</item>
-    </style>
 
     <style name="ImageTranslucentTheme" parent="AppTheme.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>

@@ -18,7 +18,6 @@
             android:text="QQ Music"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
-
     </RelativeLayout>
     <!--内容布局-->
     <LinearLayout

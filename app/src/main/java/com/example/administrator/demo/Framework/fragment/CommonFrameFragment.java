@@ -22,7 +22,7 @@ import com.example.administrator.demo.Framework.pulltorefresh.PullToRefreshActiv
 import com.example.administrator.demo.Framework.recycleview.RecycleViewActivity;
 import com.example.administrator.demo.Framework.tablayout.activity.TabLayoutMainActivity;
 import com.example.administrator.demo.Framework.xutils3.XUtils3MainActivity;
-import com.example.administrator.demo.Main.utils.DataUtil;
+import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.R;
 
 /**

@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.administrator.demo.R;
-import com.example.administrator.demo.Main.utils.DataUtil;
+import com.example.administrator.demo.Framework.DataUtil;
 
 /**
  * Created by Administrator on 2016/11/20.

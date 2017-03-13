@@ -75,6 +75,7 @@ public class BottomSheetActivity extends BaseActivity {
             @Override
             public void onSlide(View bottomSheet, float slideOffset) {
                 /*这里是拖拽的回调，根据slideOffset可以做些动画*/
+                //这里是拖拽中的回调，slideOffset为0-1 完全收起为0 完全展开为1
 
 
             }
@@ -121,15 +122,13 @@ public class BottomSheetActivity extends BaseActivity {
         float X_UP = 0, Y_UP = 0, X_DOWN = 0, Y_DOWN = 0;
         int touchEvent = event.getAction();
         switch (touchEvent) {
-            case MotionEvent.ACTION_POINTER_DOWN:
-                display("动作按下");
+            case MotionEvent.ACTION_DOWN:
                 X_DOWN = event.getX();
                 Log.e(TAG, "X_DOWN: " + X_DOWN);
                 Log.e(TAG, "Y_DOWN: " + Y_DOWN);
                 Y_DOWN = event.getY();
                 break;
-            case MotionEvent.ACTION_POINTER_UP:
-                display("动作按上");
+            case MotionEvent.ACTION_UP:
                 Log.e(TAG, "X_UP: " + X_UP);
                 Log.e(TAG, "Y_UP: " + Y_UP);
                 X_UP = event.getX();
@@ -154,7 +153,6 @@ public class BottomSheetActivity extends BaseActivity {
 //            display("向上滑动");
         }
         return super.onTouchEvent(event);
-
     }
 
     public void display(String str) {
