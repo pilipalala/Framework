@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.example.administrator.demo.Framework.BaseActivity;
 import com.example.administrator.demo.Framework.json.bean.ShopInfo;
-import com.example.administrator.demo.Main.utils.DataUtil;
+import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.R;
 
 import java.util.ArrayList;

@@ -17,7 +17,7 @@ import com.example.administrator.demo.Framework.materialdesign.recyclerview.Recy
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.StyleActivity;
 import com.example.administrator.demo.Framework.materialdesign.toolbar.ToolBarActivity;
 import com.example.administrator.demo.Framework.materialdesign.translucentsystembar.TranslucentSystemBarActivity;
-import com.example.administrator.demo.Main.utils.DataUtil;
+import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.R;
 
 /**

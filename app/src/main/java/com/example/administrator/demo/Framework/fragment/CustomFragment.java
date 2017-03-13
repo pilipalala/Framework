@@ -10,7 +10,7 @@ import android.widget.ListView;
 import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.guanggaotiao.GuangGaoTiaoActivity;
 import com.example.administrator.demo.Framework.youkumenu.YouKuMenuActivity;
-import com.example.administrator.demo.Main.utils.DataUtil;
+import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.R;
 
 /**
