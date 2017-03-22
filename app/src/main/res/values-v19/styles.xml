@@ -52,10 +52,9 @@
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Toolbar主题设置-->
-    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
         <item name="android:textColorSecondary">#ffffff</item>
         <item name="android:colorBackground">#aa1FF003</item>
-
 
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item> <!--新增一个item，用于控制menu-->
 

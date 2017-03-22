@@ -134,7 +134,11 @@
 
         <activity android:name=".Framework.materialdesign.recyclerview.BottomSheetActivity" />
         <activity android:name=".Framework.materialdesign.recyclerview.FullSheetDialogFragment" />
-        <activity android:name=".Framework.HeadimageScaleActivity"></activity>
+        <activity android:name=".Framework.HeadimageScaleActivity" />
+        <activity android:name=".Framework.guanggaotiao.PxDpActivity" />
+        <activity android:name=".Framework.countdown.CountDownRunnableActivity" />
+        <activity android:name=".Framework.countdown.CountDownTimerActivity" />
+        <activity android:name=".Framework.countdown.CountDownActivity"></activity>
     </application>
 
 </manifest>

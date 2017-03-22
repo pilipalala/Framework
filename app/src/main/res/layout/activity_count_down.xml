@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.demo.Framework.countdown.CountDownActivity">
+
+    <Button
+        android:id="@+id/btn_runnable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第一种实现方式：自定义倒计时类，实现Runnable接口"
+        android:textAllCaps="false" />
+
+    <com.example.administrator.demo.Framework.countdown.CountDownTimerButton
+        android:id="@+id/btn_countDownButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第二种实现方式：自定义Button"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_countDownTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第三种实现方式：使用 CountDownTimer"
+        android:textAllCaps="false" />
+
+</LinearLayout>

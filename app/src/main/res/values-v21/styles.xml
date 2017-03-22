@@ -45,7 +45,7 @@
     </style>
 
     <!-- Toolbar主题设置-->
-    <style name="ToolBarTheme" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
         <!-- 更换Toolbar OVerFlow menu icon -->
         <!--<item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.More</item>-->
         <!--对应的就是右上角三个圆点的颜色-->

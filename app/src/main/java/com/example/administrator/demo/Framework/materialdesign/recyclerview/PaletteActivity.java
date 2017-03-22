@@ -39,7 +39,7 @@ public class PaletteActivity extends AppCompatActivity {
             }
         });
 
-        mainVpContainer.setAdapter(new PaletteAdapter(getSupportFragmentManager(), tabTitles, this));
+        mainVpContainer.setAdapter(new PaletteAdapter(getSupportFragmentManager(), this));
         toolbarTab.setupWithViewPager(mainVpContainer);
 
         changeTopBgColor(0);

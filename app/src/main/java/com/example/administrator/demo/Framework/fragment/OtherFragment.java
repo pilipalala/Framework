@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.demo.Framework.BaseFragment;
+import com.example.administrator.demo.Framework.DataUtil;
+import com.example.administrator.demo.Framework.countdown.CountDownActivity;
 import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.BottomSheetActivity;
@@ -17,7 +19,6 @@ import com.example.administrator.demo.Framework.materialdesign.recyclerview.Recy
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.StyleActivity;
 import com.example.administrator.demo.Framework.materialdesign.toolbar.ToolBarActivity;
 import com.example.administrator.demo.Framework.materialdesign.translucentsystembar.TranslucentSystemBarActivity;
-import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.R;
 
 /**
@@ -48,7 +49,7 @@ public class OtherFragment extends BaseFragment {
                         startActivity(new Intent(getActivity(), ToolBarActivity.class));
                         break;
                     case 3:
-                        startActivity(new Intent(getActivity(),  RecyclerViewActivity.class));
+                        startActivity(new Intent(getActivity(), RecyclerViewActivity.class));
                         break;
                     case 4:
                         startActivity(new Intent(getActivity(), MapsActivity.class));
@@ -58,6 +59,9 @@ public class OtherFragment extends BaseFragment {
                         break;
                     case 6:
                         startActivity(new Intent(getActivity(), BottomSheetActivity.class));
+                        break;
+                    case 7:
+                        startActivity(new Intent(getActivity(), CountDownActivity.class));
                         break;
 
                 }
@@ -69,7 +73,7 @@ public class OtherFragment extends BaseFragment {
     @Override
     protected void initData() {
         /*DrawerLayoutDemo*/
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,android.R.layout.simple_expandable_list_item_1, DataUtil.OTHER_DATA);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_expandable_list_item_1, DataUtil.OTHER_DATA);
         mListView.setAdapter(adapter);
         Log.e(TAG, "其他数据初始化了...");
         super.initData();

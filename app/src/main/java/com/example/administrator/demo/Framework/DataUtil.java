@@ -16,7 +16,7 @@ public class DataUtil {
     public static final String[] CUSTOM_DATA = {
             "优酷菜单--属性动画", "轮播图--ViewPager"};
     public static final String[] OTHER_DATA = {
-            "DrawerLayoutDemo", "Translucent System Bar", "ToolBar&TextInputLayout", "RecyclerView", "GoogleMap","Style","BottomSheet"};
+            "DrawerLayoutDemo", "Translucent System Bar", "ToolBar&TextInputLayout", "RecyclerView", "GoogleMap","Style","BottomSheet","CountDown"};
     public static final String listOfJson = "[\n" +
             "    {\n" +
             "        \"id\": 1,\n" +

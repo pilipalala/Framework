@@ -1,28 +1,27 @@
 package com.example.administrator.demo.Framework.materialdesign.recyclerview;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.R;
 
 /**
  * Created by Administrator on 2017/2/23.
  */
-public class PaletteFragment extends BaseFragment {
+public class PaletteFragment extends Fragment {
 
     private static final int[] drawables = {R.mipmap.one, R.mipmap.two, R.mipmap.four, R.mipmap
             .three, R.mipmap.five};
     private static final String ARG_POSITION = "position";
     private int position;
-    private FrameLayout frameLayout;
-    private TextView textView;
 
     public static PaletteFragment newInstance(int position) {
         PaletteFragment frament = new PaletteFragment();
@@ -42,33 +41,24 @@ public class PaletteFragment extends BaseFragment {
     }
 
     @Override
-    protected View initView() {
-        frameLayout = new FrameLayout(mContext);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+        FrameLayout frameLayout = new FrameLayout(getActivity());
         frameLayout.setLayoutParams(params);
         frameLayout.setBackgroundResource(drawables[position]);
+        final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8,
+                getResources().getDisplayMetrics());
 
-        /*这个方法是转变为标准尺寸的一个函数，例如
-        int size = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 20, context.getResources().getDisplayMetrics());
-        这里COMPLEX_UNIT_SP是单位，20是数值，也就是20sp。*/
-        int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics());
+        TextView textView = new TextView(getActivity());
         params.setMargins(margin, margin, margin, margin);
-
-        textView = new TextView(mContext);
+        textView.setLayoutParams(params);
         textView.setLayoutParams(params);
         textView.setGravity(Gravity.BOTTOM);
-        textView.setTextColor(Color.WHITE);
+        textView.setText("CARD " + (position + 1));
+
         frameLayout.addView(textView);
         return frameLayout;
     }
-
-    @Override
-    protected void initData() {
-        super.initData();
-        textView.setText("CARD" + position);
-    }
-
-
 
     /**
      * 提供当前Fragment的主色调的bitmap对象，供Palette解析颜色

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_item1"
-        android:title="item_01"
+        android:title="@string/item_01"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_search"
@@ -19,6 +19,20 @@
 
     <item
         android:id="@+id/action_item2"
-        android:title="item_02"
-        app:showAsAction="never" />
+        android:title="@string/item_02"
+        app:showAsAction="never">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/item1"
+                    android:title="item1" />
+                <item
+                    android:id="@+id/item2"
+                    android:title="item2" />
+                <item
+                    android:id="@+id/item3"
+                    android:title="item3" />
+            </group>
+        </menu>
+    </item>
 </menu>

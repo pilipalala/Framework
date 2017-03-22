@@ -10,4 +10,5 @@ public class Utils {
         float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dp * scale + 0.5f);
     }
+
 }
