@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.Framework.countdown.CountDownActivity;
+import com.example.administrator.demo.Framework.customview.CustomViewMainActivity;
 import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.BottomSheetActivity;
@@ -62,6 +63,9 @@ public class OtherFragment extends BaseFragment {
                         break;
                     case 7:
                         startActivity(new Intent(getActivity(), CountDownActivity.class));
+                        break;
+                    case 8:
+                        startActivity(new Intent(getActivity(), CustomViewMainActivity.class));
                         break;
 
                 }

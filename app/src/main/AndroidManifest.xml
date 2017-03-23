@@ -133,12 +133,12 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".Framework.materialdesign.recyclerview.BottomSheetActivity" />
-        <activity android:name=".Framework.materialdesign.recyclerview.FullSheetDialogFragment" />
         <activity android:name=".Framework.HeadimageScaleActivity" />
         <activity android:name=".Framework.guanggaotiao.PxDpActivity" />
         <activity android:name=".Framework.countdown.CountDownRunnableActivity" />
         <activity android:name=".Framework.countdown.CountDownTimerActivity" />
-        <activity android:name=".Framework.countdown.CountDownActivity"></activity>
+        <activity android:name=".Framework.countdown.CountDownActivity" />
+        <activity android:name=".Framework.customview.CustomViewMainActivity"></activity>
     </application>
 
 </manifest>
