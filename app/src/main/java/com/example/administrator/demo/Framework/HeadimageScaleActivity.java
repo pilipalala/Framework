@@ -41,6 +41,7 @@ public class HeadimageScaleActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StatusBarUtil.setImgTransparent(this);
         setContentView(R.layout.activity_headimage_scale);
         ButterKnife.bind(this);
         // 获取屏幕宽高
