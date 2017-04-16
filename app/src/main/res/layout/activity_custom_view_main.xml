@@ -4,20 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_custom_view_main"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.administrator.demo.Framework.customview.CustomViewMainActivity">
 
     <com.example.administrator.demo.Framework.customview.MyAttributeView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:my_age="23"
         android:visibility="gone"
+        app:my_age="23"
         app:my_bg="@mipmap/ic_launcher"
         app:my_name="wyj" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"></RadioGroup>
+
     <com.example.administrator.demo.Framework.customview.MyViewPager
         android:id="@+id/my_viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
