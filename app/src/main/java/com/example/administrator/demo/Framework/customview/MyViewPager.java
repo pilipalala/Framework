@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 import android.widget.Toast;
 
+
 /**
  * Created by Administrator on 2017/3/28.
  */
@@ -26,6 +27,8 @@ public class MyViewPager extends ViewGroup {
     private int currentIndex;
     private Scroller myScroller;
     onPagerChangerListener onPagerChangerListener;
+    private float downX;
+    private float downY;
 
     //    private MyScroller myScroller;
     public interface onPagerChangerListener {
@@ -41,7 +44,7 @@ public class MyViewPager extends ViewGroup {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
-            child.measure(widthMeasureSpec,heightMeasureSpec);
+            child.measure(widthMeasureSpec, heightMeasureSpec);
         }
     }
 
@@ -89,6 +92,35 @@ public class MyViewPager extends ViewGroup {
 
     float startX;
     float eventX;
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean result = false;//默认传递给孩子
+        detector.onTouchEvent(ev);
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                /*记录起始坐标*/
+                downX = ev.getX();
+                downY = ev.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                /*计算结束坐标*/
+                float endDownX = ev.getX();
+                float endDownY = ev.getY();
+                /*计算绝对值*/
+                float distanceX = Math.abs(endDownX - downX);
+                float distanceY = Math.abs(endDownY - downY);
+                if (distanceX > distanceY && distanceX > 5) {
+                    result = true;
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+
+
+        return result;
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
