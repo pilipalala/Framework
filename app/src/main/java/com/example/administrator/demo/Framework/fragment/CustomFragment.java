@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.Framework.guanggaotiao.GuangGaoTiaoActivity;
+import com.example.administrator.demo.Framework.shoppingcart.ShoppingCartActivity;
 import com.example.administrator.demo.Framework.youkumenu.YouKuMenuActivity;
 import com.example.administrator.demo.R;
 
@@ -34,6 +35,9 @@ public class CustomFragment extends BaseFragment {
                         break;
                     case 1:
                         startActivity(new Intent(getActivity(), GuangGaoTiaoActivity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(getActivity(), ShoppingCartActivity.class));
                         break;
                 }
             }

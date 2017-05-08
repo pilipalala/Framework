@@ -23,7 +23,7 @@
 
         <activity
             android:name=".Framework.LauncherActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/app_name"
             android:theme="@style/ImageTranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -185,6 +185,8 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
+        <activity android:name=".Framework.customview.CustomViewMainActivity"/>
+        <activity android:name=".Framework.shoppingcart.ShoppingCartActivity" />
     </application>
 
 </manifest>
