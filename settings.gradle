@@ -1,4 +1,4 @@
-include ':app', ':okhttputils', ':xutils', ':banner'
+include ':app', ':okhttputils', ':xutils', ':banner', ':IMKit'
 include ':Android-PullToRefresh'
 include ':pullToRefreshListFragment'
 include ':pullToRefreshViewPager'

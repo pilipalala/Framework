@@ -18,9 +18,8 @@
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
             app:navigationIcon="@mipmap/back_ib"
-            app:theme="@style/ToolBarTheme"
-            app:popupTheme="@style/ToolbarPopupTheme">
-        </android.support.v7.widget.Toolbar>
+            app:popupTheme="@style/ToolbarPopupTheme"
+            app:theme="@style/ToolBarTheme"></android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 

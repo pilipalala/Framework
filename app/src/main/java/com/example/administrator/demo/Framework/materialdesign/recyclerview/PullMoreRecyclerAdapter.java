@@ -2,6 +2,7 @@ package com.example.administrator.demo.Framework.materialdesign.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,12 +48,7 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         if (viewType == TYPE_NORMAL_ITEM) {
             View view = layoutInflater.inflate(R.layout.recyclerview_normal_view, parent, false);
             final NormalItmeViewHolder normalItmeViewHolder = new NormalItmeViewHolder(view);
-            /*normalItmeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    listener.setOnItemClick(normalItmeViewHolder.itemView,normalItmeViewHolder.getLayoutPosition());
-                }
-            });*/
+
             return normalItmeViewHolder;
         } else {
             View view = layoutInflater.inflate(R.layout.recyclerview_footer_view, parent, false);
@@ -115,8 +111,10 @@ public class PullMoreRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public int getItemViewType(int position) {
         if (getItemCount() == position + 1) {
+            Log.e("getItemViewType", "-----TYPE_FOOTER_ITEM: " );
             return TYPE_FOOTER_ITEM;
         } else {
+            Log.e("getItemViewType", "TYPE_FOOTER_ITEM:----- " );
             return TYPE_NORMAL_ITEM;
         }
     }

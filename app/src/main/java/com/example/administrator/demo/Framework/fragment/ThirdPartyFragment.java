@@ -51,26 +51,26 @@ public class ThirdPartyFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
-        Log.e(TAG, "第三方控件数据初始化了...");
-        banner.setImages(MyApplication.images)
-                .setImageLoader(new GlideImageLoader())
-                .setIndicatorGravity(BannerConfig.RIGHT)
-                .start();
-        llRoot.getBackground().mutate().setAlpha(0);
-        scrollView.setScrollViewListener(new ObservaleScrollView.ScrollViewListener() {
-            @Override
-            public void onScrollChanged(ObservaleScrollView scrollView, int x, int y, int oldx, int oldy) {
-                if (y <= banner.getHeight() && y >= 0) {
+            Log.e(TAG, "第三方控件数据初始化了...");
+            banner.setImages(MyApplication.images)
+                    .setImageLoader(new GlideImageLoader())
+                    .setIndicatorGravity(BannerConfig.RIGHT)
+                    .start();
+            llRoot.getBackground().mutate().setAlpha(0);
+            scrollView.setScrollViewListener(new ObservaleScrollView.ScrollViewListener() {
+                @Override
+                public void onScrollChanged(ObservaleScrollView scrollView, int x, int y, int oldx, int oldy) {
+                    if (y <= banner.getHeight() && y >= 0) {
 
-                    float scale = (float) y / banner.getHeight();
-                    float alpha = (255 * scale);
-                    text.setTextColor(Color.argb((int) alpha, 255, 255, 255));
-                    llRoot.getBackground().mutate().setAlpha((int) alpha);
-                } else if (y > banner.getHeight()) {
-                    llRoot.getBackground().mutate().setAlpha(255);
+                        float scale = (float) y / banner.getHeight();
+                        float alpha = (255 * scale);
+                        text.setTextColor(Color.argb((int) alpha, 255, 255, 255));
+                        llRoot.getBackground().mutate().setAlpha((int) alpha);
+                    } else if (y > banner.getHeight()) {
+                        llRoot.getBackground().mutate().setAlpha(255);
+                    }
                 }
-            }
-        });
+            });
     }
 
 

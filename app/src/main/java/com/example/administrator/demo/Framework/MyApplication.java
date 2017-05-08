@@ -44,6 +44,8 @@ public class MyApplication extends Application {
 
         /*初始化Fresco*/
         Fresco.initialize(this);
+
+//        RongIM.init(this);
     }
 
     private void initxUtils3() {

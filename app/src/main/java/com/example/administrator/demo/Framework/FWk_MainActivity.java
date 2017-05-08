@@ -18,6 +18,7 @@ import java.util.List;
 public class FWk_MainActivity extends FragmentActivity {
     private RadioGroup rg_main;
     private List<BaseFragment> mBaseFragment;
+
     private int position;
     private Fragment mFragment;
 

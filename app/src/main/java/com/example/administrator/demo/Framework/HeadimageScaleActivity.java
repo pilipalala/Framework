@@ -36,8 +36,9 @@ public class HeadimageScaleActivity extends BaseActivity {
     private Boolean mScaling = false;
 
     private DisplayMetrics metric;
-/*image设置android:layout_gravity="center"
-                android:scaleType="centerCrop"*/
+
+    /*image设置android:layout_gravity="center"
+                    android:scaleType="centerCrop"*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
