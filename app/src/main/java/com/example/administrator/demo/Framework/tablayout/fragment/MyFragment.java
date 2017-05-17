@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.administrator.demo.Framework.tablayout.adapter.MyAdapter;
 import com.example.administrator.demo.R;
@@ -29,7 +28,6 @@ public class MyFragment extends Fragment {
         return title;
     }
 
-    TextView textView;
     private final int num;
     private RecyclerView myRecyclerView;
     private Context mContext;
@@ -80,7 +78,7 @@ public class MyFragment extends Fragment {
          * LinearLayoutManager.HORIZONTAL 水平
          * LinearLayoutManager.VERTICAL 垂直
          * 第三个参数是是否逆向布局如果设置为true，*/
-        myRecyclerView.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL,false));
         Log.e(TAG, "onActivityCreated: "+num);
     }
 

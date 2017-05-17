@@ -12,25 +12,48 @@ import java.util.ArrayList;
  * Created by Administrator on 2017/1/3.
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    private final ArrayList<MyFragment> fragments;
 
-    public ViewPagerAdapter(FragmentManager fm,ArrayList<MyFragment> fragments) {
+
+    private ArrayList<Fragment> fragments;
+    private String[] tabTitles;
+    private ArrayList<MyFragment> myFragments;
+
+    public ViewPagerAdapter(FragmentManager fm, ArrayList<Fragment> fragments, String[] tabTitles) {
         super(fm);
         this.fragments = fragments;
+        this.tabTitles = tabTitles;
+    }
+
+    public ViewPagerAdapter(FragmentManager fm, ArrayList<MyFragment> myFragments) {
+        super(fm);
+        this.myFragments = myFragments;
+
     }
 
     @Override
     public Fragment getItem(int position) {
-        return fragments.get(position);
+        if (fragments == null) {
+            return myFragments.get(position);
+        } else {
+            return fragments.get(position);
+        }
     }
 
     @Override
     public int getCount() {
-        return fragments.size();
+        if (fragments == null) {
+            return myFragments.size();
+        } else {
+            return fragments.size();
+        }
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return fragments.get(position).getTitle();
+        if (tabTitles == null) {
+            return myFragments.get(position).getTitle();
+        } else {
+            return tabTitles[position];
+        }
     }
 }

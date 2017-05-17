@@ -14,7 +14,8 @@ import android.widget.Toast;
  * Created by Administrator on 2017/3/28.
  */
 
-public class MyViewPager extends ViewGroup {
+public class
+MyViewPager extends ViewGroup {
 
     /**
      * 手势识别器

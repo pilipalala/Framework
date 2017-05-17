@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.demo.Framework.BaseActivity;
+import com.example.administrator.demo.Framework.togglebutton.MyToggleButton;
 import com.example.administrator.demo.R;
 
 import java.util.ArrayList;
@@ -29,6 +30,8 @@ public class GuangGaoTiaoActivity extends BaseActivity {
     TextView text;
     @Bind(R.id.ll_point)
     LinearLayout llPoint;
+    @Bind(R.id.toggleButton)
+    MyToggleButton toggleButton;
     private ArrayList<ImageView> imageViewList;
     // 图片资源ID
     private final int[] imageIds = {
@@ -120,7 +123,7 @@ public class GuangGaoTiaoActivity extends BaseActivity {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(GuangGaoTiaoActivity.this, imageDescriptions[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(GuangGaoTiaoActivity.this,PxDpActivity.class));
+                startActivity(new Intent(GuangGaoTiaoActivity.this, PxDpActivity.class));
             }
         });
 
@@ -151,6 +154,14 @@ public class GuangGaoTiaoActivity extends BaseActivity {
 
         /*发消息*/
         handler.sendEmptyMessageDelayed(0, 3000);
+
+
+        toggleButton.setOnChangeListener(new MyToggleButton.OnChangeListener() {
+            @Override
+            public void OnChangeListener(boolean isOpen) {
+                Toast.makeText(GuangGaoTiaoActivity.this, isOpen+"", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -201,7 +212,7 @@ public class GuangGaoTiaoActivity extends BaseActivity {
             } else if (state == ViewPager.SCROLL_STATE_SETTLING) {//滑动
                 Log.e("onTouchListener", "onTouch: " + "/滑动");
 
-            } else if (state == ViewPager.SCROLL_STATE_IDLE&&isDragging) {//静止
+            } else if (state == ViewPager.SCROLL_STATE_IDLE && isDragging) {//静止
                 isDragging = false;
                 Log.e("onTouchListener", "onTouch: " + "/静止");
                 handler.removeCallbacksAndMessages(null);
