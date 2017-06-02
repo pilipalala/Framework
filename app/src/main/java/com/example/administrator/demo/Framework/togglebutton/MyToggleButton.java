@@ -13,7 +13,7 @@ import com.example.administrator.demo.R;
 
 /**
  * Created by wangyujiew .
- * Data 2017/5/14
+ * Data 2017/5/14M
  * Time 10:03
  * TODO 自定义开关
  */
@@ -121,13 +121,10 @@ public class MyToggleButton extends View implements View.OnClickListener {
             case MotionEvent.ACTION_UP:
                 if (!isEnableClick) {
                     if (slideLeft > slidLeftMax / 2) {
-
                         //显示按钮开
                         isOpen = true;
                     } else {
-
                         isOpen = false;
-
                     }
                     flushView();
                 }

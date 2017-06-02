@@ -168,12 +168,11 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <!--会话界面-->
+        <!-- 会话界面 -->
         <activity
             android:name=".Framework.conversation.ConversationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -185,8 +184,10 @@
                     android:scheme="rong" />
             </intent-filter>
         </activity>
-        <activity android:name=".Framework.customview.CustomViewMainActivity"/>
+        <activity android:name=".Framework.customview.CustomViewMainActivity" />
         <activity android:name=".Framework.shoppingcart.ShoppingCartActivity" />
+        <activity android:name=".Framework.eventtest.TouchEventActivity" />
+        <activity android:name=".Framework.customview.QuickIndexActivity" />
     </application>
 
 </manifest>

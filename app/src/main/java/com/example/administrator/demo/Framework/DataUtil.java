@@ -19,7 +19,7 @@ public class DataUtil {
             "DrawerLayoutDemo", "Translucent System Bar",
             "ToolBar&TextInputLayout", "RecyclerView",
             "GoogleMap","Style","BottomSheet","CountDown",
-            "自定义View"};
+            "自定义View","快速索引"};
     public static final String listOfJson = "[\n" +
             "    {\n" +
             "        \"id\": 1,\n" +

@@ -13,6 +13,7 @@ import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.Framework.countdown.CountDownActivity;
 import com.example.administrator.demo.Framework.customview.CustomViewMainActivity;
+import com.example.administrator.demo.Framework.customview.QuickIndexActivity;
 import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.BottomSheetActivity;
@@ -30,6 +31,8 @@ public class OtherFragment extends BaseFragment {
     private TextView textView;
     private static final String TAG = "CustomFragment";
     private ListView mListView;
+    private String[] activity = {DrawerLayoutMainActivity.class.getSimpleName()};
+
 
     @Override
     protected View initView() {
@@ -66,6 +69,9 @@ public class OtherFragment extends BaseFragment {
                         break;
                     case 8:
                         startActivity(new Intent(getActivity(), CustomViewMainActivity.class));
+                        break;
+                    case 9:
+                        startActivity(new Intent(getActivity(), QuickIndexActivity.class));
                         break;
 
                 }
