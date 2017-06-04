@@ -142,12 +142,23 @@ public class IndexView extends View {
         return true;
     }
 
+    /**
+     * 设置字母下标索引变化的监听
+     * @param listener
+     */
     public void setOnIndexChangeListener(OnIndexChangeListener listener) {
         this.listener = listener;
     }
 
 
+    /**
+     * 字母下标索引变化的监听器
+     */
     public interface OnIndexChangeListener {
+        /**
+         * 当字母下标位置发生变化的时候回调
+         * @param word
+         */
         void onIndexChange(String word);
     }
 }
