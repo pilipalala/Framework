@@ -1,4 +1,4 @@
-package com.example.administrator.demo.Framework.customview;
+package com.example.administrator.demo.Framework.customview.index;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;

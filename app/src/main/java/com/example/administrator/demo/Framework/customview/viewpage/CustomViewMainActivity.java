@@ -1,4 +1,4 @@
-package com.example.administrator.demo.Framework.customview;
+package com.example.administrator.demo.Framework.customview.viewpage;
 
 import android.os.Bundle;
 import android.view.View;

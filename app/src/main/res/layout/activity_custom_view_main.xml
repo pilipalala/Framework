@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.demo.Framework.customview.CustomViewMainActivity">
+    tools:context="com.example.administrator.demo.Framework.customview.viewpage.CustomViewMainActivity">
 
     <com.example.administrator.demo.Framework.customview.MyAttributeView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"></RadioGroup>
 
-    <com.example.administrator.demo.Framework.customview.MyViewPager
+    <com.example.administrator.demo.Framework.customview.viewpage.MyViewPager
         android:id="@+id/my_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

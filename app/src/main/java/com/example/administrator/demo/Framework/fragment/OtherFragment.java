@@ -12,8 +12,9 @@ import android.widget.TextView;
 import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.Framework.countdown.CountDownActivity;
-import com.example.administrator.demo.Framework.customview.CustomViewMainActivity;
-import com.example.administrator.demo.Framework.customview.QuickIndexActivity;
+import com.example.administrator.demo.Framework.customview.SkateMenu.SkateMenuActivity;
+import com.example.administrator.demo.Framework.customview.index.QuickIndexActivity;
+import com.example.administrator.demo.Framework.customview.viewpage.CustomViewMainActivity;
 import com.example.administrator.demo.Framework.googlemap.MapsActivity;
 import com.example.administrator.demo.Framework.materialdesign.drawerlayout.DrawerLayoutMainActivity;
 import com.example.administrator.demo.Framework.materialdesign.recyclerview.BottomSheetActivity;
@@ -72,6 +73,9 @@ public class OtherFragment extends BaseFragment {
                         break;
                     case 9:
                         startActivity(new Intent(getActivity(), QuickIndexActivity.class));
+                        break;
+                    case 10:
+                        startActivity(new Intent(getActivity(), SkateMenuActivity.class));
                         break;
 
                 }

@@ -4,7 +4,7 @@
     android:id="@+id/activity_quick_index"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.demo.Framework.customview.QuickIndexActivity">
+    tools:context="com.example.administrator.demo.Framework.customview.index.QuickIndexActivity">
 
     <ListView
         android:id="@+id/lv_main"
@@ -23,7 +23,7 @@
         android:textSize="@dimen/sp_30"
         android:visibility="gone" />
 
-    <com.example.administrator.demo.Framework.customview.IndexView
+    <com.example.administrator.demo.Framework.customview.index.IndexView
         android:id="@+id/iv_words"
         android:layout_width="@dimen/dp_30"
         android:layout_height="match_parent"
