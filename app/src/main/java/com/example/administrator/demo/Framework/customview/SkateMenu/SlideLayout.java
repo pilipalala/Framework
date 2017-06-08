@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Scroller;
 
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
@@ -31,9 +32,16 @@ public class SlideLayout extends FrameLayout {
     private int menuWidth;
     private int viewHeight;
     private int toScrollX;
+    /**
+     * 滚动器
+     */
+    private Scroller scroller;
+    private float downX, downY;
+    private OnStateChangeListener listener;
 
     public SlideLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        scroller = new Scroller(context);
     }
 
     /**
@@ -78,8 +86,8 @@ public class SlideLayout extends FrameLayout {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 /*1.按下记录坐标值*/
-                startX = event.getX();
-                startY = event.getY();
+                downX = startX = event.getX();
+                downY = startY = event.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 /*2.记录结束值*/
@@ -89,16 +97,80 @@ public class SlideLayout extends FrameLayout {
                 /*3.计算偏移量*/
 
                 float distanceX = endX - startX;
-                Log.e(TAG, "onTouchEvent: "+getScaleX() );
+                Log.e(TAG, "onTouchEvent: " + getScaleX());
 
                 toScrollX = (int) (getScrollX() - distanceX);
-                Log.e(TAG, "toScrollX: "+toScrollX );
+                Log.e(TAG, "toScrollX: " + toScrollX);
                 if (toScrollX < 0) {
                     toScrollX = 0;
                 } else if (toScrollX > menuWidth) {
                     toScrollX = menuWidth;
                 }
                 scrollTo(toScrollX, getScrollY());
+
+                /*在X轴和Y轴滑动的距离*/
+                startX = event.getX();
+                startY = event.getY();
+
+                float DX = Math.abs(endX - downX);
+                float DY = Math.abs(endY - downY);
+                if (DX > DY && DX > 8) {
+                    /*水平方向滑动*/
+                    /*响应侧滑*/
+                    /*反拦截--事件给slideLayout*/
+                    /*把父View拦截*/
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+
+                break;
+            case MotionEvent.ACTION_UP:
+                int totlaScrollX = getScrollX();/*偏移量*/
+                if (totlaScrollX < menuWidth / 2) {
+                    /*关闭menu*/
+                    closeMenu();
+                } else {
+                    /*打开menu*/
+                    openMenu();
+                }
+                break;
+
+        }
+
+        return true;
+
+
+    }
+
+    /**
+     *
+     * true:拦截孩子的事件，但会执行当前控件的onTouchEvent()方法
+     * false:不拦截孩子的事件，事件继续传递
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        boolean intercept = false;
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                /*1.按下记录坐标值*/
+                downX = startX = event.getX();
+                if (listener != null) {
+                    listener.onDown(this);
+                }
+                break;
+            case MotionEvent.ACTION_MOVE:
+                /*2.记录结束值*/
+                float endX = event.getX();
+                /*在X轴和Y轴滑动的距离*/
+                startX = event.getX();
+                float DX = Math.abs(endX - downX);
+                if ( DX > 8) {
+                    /*水平方向滑动*/
+                    /*响应侧滑*/
+                    intercept = true;
+                }
 
                 break;
             case MotionEvent.ACTION_UP:
@@ -107,8 +179,51 @@ public class SlideLayout extends FrameLayout {
 
         }
 
-        return true;
 
+        return intercept;
+
+    }
+
+    public void openMenu() {
+        /*目标--》menuWidth*/
+        int distanceX = menuWidth - getScrollX();
+        scroller.startScroll(getScrollX(), getScrollY(), distanceX, getScrollY());
+        invalidate();/*强制刷新*/
+        if (listener != null) {
+            listener.onOpen(this);
+        }
+    }
+
+
+    /**
+     * 关闭menu
+     */
+    public void closeMenu() {
+        /*目标--》0*/
+        int distanceX = (int) (0 - getScrollX());
+        scroller.startScroll(getScrollX(), getScrollY(), distanceX, getScrollY());
+        invalidate();/*强制刷新*/
+        if (listener != null) {
+            listener.onClose(this);
+        }
+    }
+
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        if (scroller.computeScrollOffset()) {
+            scrollTo(scroller.getCurrX(), scroller.getCurrY());
+            invalidate();
+        }
+    }
+
+    public interface OnStateChangeListener {
+        void onClose(SlideLayout slideLayout);
+        void onDown(SlideLayout slideLayout);
+        void onOpen(SlideLayout slideLayout);
+    }
+    public void setOnStateChangeListener(OnStateChangeListener listener) {
+        this.listener = listener;
 
     }
 }

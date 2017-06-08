@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/llId"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                xmlns:fab="http://schemas.android.com/apk/res-auto">
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llId"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <ListView
         android:id="@+id/lvId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-        android:visibility="visible">
-    </ListView>
+        android:visibility="visible"></ListView>
 
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fab1Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="12dp"
         android:layout_marginRight="12dp"
         android:src="@android:drawable/ic_input_add"
         fab:fab_colorNormal="#FF00FF"
         fab:fab_colorPressed="#EE00EE"
-        fab:fab_colorRipple="#FFF000"/>
+        fab:fab_colorRipple="#FFF000" />
+
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fab2Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="80dp"
         android:layout_marginRight="12dp"
-        android:visibility="gone"
         android:src="@android:drawable/ic_input_add"
+        android:visibility="gone"
         fab:fab_colorNormal="#FF00FF"
         fab:fab_colorPressed="#FFBBFF"
-        fab:fab_colorRipple="#FFF000"/>
+        fab:fab_colorRipple="#FFF000" />
+
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fab3Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="150dp"
         android:layout_marginRight="12dp"
-        android:visibility="gone"
         android:src="@android:drawable/ic_input_add"
+        android:visibility="gone"
         fab:fab_colorNormal="#FF00FF"
         fab:fab_colorPressed="#FFBBFF"
-        fab:fab_colorRipple="#FFF000"/>
+        fab:fab_colorRipple="#FFF000" />
 
-</RelativeLayout >
+</RelativeLayout>
