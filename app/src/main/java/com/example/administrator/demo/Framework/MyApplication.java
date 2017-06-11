@@ -1,6 +1,5 @@
 package com.example.administrator.demo.Framework;
 
-import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
@@ -8,22 +7,27 @@ import android.util.DisplayMetrics;
 import com.antfortune.freeline.FreelineCore;
 import com.example.administrator.demo.R;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cookie.store.PersistentCookieStore;
+import com.lzy.okgo.model.HttpParams;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import org.litepal.LitePalApplication;
 import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
 
 /**
  * Created by Administrator on 2016/12/19.
  * 作用：代表整个文件
  */
-public class MyApplication extends Application {
+public class MyApplication extends LitePalApplication {
     public static List<?> images = new ArrayList<>();
     public static List<String> titles = new ArrayList<>();
     public static int H;
@@ -46,6 +50,28 @@ public class MyApplication extends Application {
         Fresco.initialize(this);
 
 //        RongIM.init(this);
+
+        initOkGO();
+    }
+
+    private void initOkGO() {
+        HttpParams params = new HttpParams();
+        params.put("name","pilipala");
+        OkGo.init(this);
+        OkGo.getInstance()
+                .debug("pilipala", Level.WARNING,true)
+                //如果使用默认的 60秒,以下三行也不需要传
+                .setConnectTimeout(10000)  //全局的连接超时时间
+                .setReadTimeOut(10000)     //全局的读取超时时间
+
+                .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)    //全局的写入超时时间
+                .setCookieStore(new PersistentCookieStore())        //cookie持久化存储，如果cookie不过期，则一直有效
+                .setCertificates()                                  //方法一：信任所有证书,不安全有风险
+                .addCommonParams(params);   //设置全局公共参数
+
+
+
+
     }
 
     private void initxUtils3() {

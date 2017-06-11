@@ -14,7 +14,7 @@ public class DataUtil {
             "Expandablelistview", "UniversalVideoView", "....."};
 
     public static final String[] CUSTOM_DATA = {
-            "优酷菜单--属性动画", "轮播图--ViewPager","外卖点餐"};
+            "优酷菜单--属性动画", "轮播图--ViewPager","外卖点餐","LitePal"};
     public static final String[] OTHER_DATA = {
             "DrawerLayoutDemo", "Translucent System Bar",
             "ToolBar&TextInputLayout", "RecyclerView",

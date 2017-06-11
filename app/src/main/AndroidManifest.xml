@@ -188,7 +188,10 @@
         <activity android:name=".Framework.shoppingcart.ShoppingCartActivity" />
         <activity android:name=".Framework.eventtest.TouchEventActivity" />
         <activity android:name=".Framework.customview.index.QuickIndexActivity" />
-        <activity android:name=".Framework.customview.SkateMenu.SkateMenuActivity"></activity>
+        <activity android:name=".Framework.customview.SkateMenu.SkateMenuActivity" />
+        <activity android:name=".Framework.guanggaotiao.PhotoViewActivity" />
+        <activity android:name=".Framework.litepal.LitePalActivity" />
+        <activity android:name=".Framework.okgo.OkGoMainActivity"></activity>
     </application>
 
 </manifest>

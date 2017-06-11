@@ -58,7 +58,7 @@
             android:id="@+id/accountinput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入账号"
+            android:hint="请输入账号(限制数字和字母)"
             app:counterEnabled="true"
             app:counterMaxLength="11">
 
@@ -66,9 +66,9 @@
                 android:id="@+id/account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:maxLength="11"
-                android:singleLine="true" />
+                android:digits="0123456789qwertyuiopasdfghjklzxcvbnm"
+                android:inputType="text"
+                android:maxLength="11" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -83,8 +83,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:singleLine="true" />
+                android:inputType="textPassword"/>
 
         </android.support.design.widget.TextInputLayout>
 

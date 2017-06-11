@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.example.administrator.demo.Framework.guanggaotiao.HackyViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/ToolbarPopupTheme"
+        app:navigationIcon="@mipmap/back_ib"
+        app:theme="@style/ToolBarTheme"/>
+    <TextView
+        android:id="@+id/tab_viewpager"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:background="#30000000"
+        android:gravity="center"
+        android:layout_height="50dp" />
+</FrameLayout>
+
+

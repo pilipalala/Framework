@@ -11,6 +11,7 @@
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
 
         <!--背景透明，不设滑动关闭时背景就是黑的。-->
         <item name="android:windowIsTranslucent">true</item>

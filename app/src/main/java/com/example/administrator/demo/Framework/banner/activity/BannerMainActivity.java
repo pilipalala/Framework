@@ -3,6 +3,8 @@ package com.example.administrator.demo.Framework.banner.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.example.administrator.demo.Framework.BaseActivity;
 import com.example.administrator.demo.Framework.MyApplication;
 import com.example.administrator.demo.Framework.banner.GlideImageLoader;
 import com.example.administrator.demo.Framework.banner.SampleAdapter;
+import com.example.administrator.demo.Framework.guanggaotiao.PhotoViewActivity;
 import com.example.administrator.demo.R;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerClickListener;
@@ -75,6 +78,23 @@ public class BannerMainActivity extends BaseActivity implements SwipeRefreshLayo
         banner.setOnBannerClickListener(new OnBannerClickListener() {
             @Override
             public void OnBannerClick(int position) {
+                /*ActivityOptionsCompat compat = ActivityOptionsCompat.makeCustomAnimation(this,
+                        R.anim.translate_in, R.anim.translate_none);
+                Intent intent = new Intent(BannerMainActivity.this, PhotoViewActivity.class);
+                intent.putExtra("position", position);
+                ActivityCompat.startActivity(BannerMainActivity.this,
+                        intent, compat.toBundle());*/
+
+                Intent intent = new Intent(BannerMainActivity.this, PhotoViewActivity.class);
+                intent.putExtra("position", position);
+                ActivityOptionsCompat compat = ActivityOptionsCompat.makeScaleUpAnimation(banner,
+                        banner.getWidth() / 2, banner.getHeight() / 2, 0, 0);
+                ActivityCompat.startActivity(BannerMainActivity.this, intent,
+                        compat.toBundle());
+
+
+
+//                startActivity(intent);
                 Toast.makeText(BannerMainActivity.this, position+"", Toast.LENGTH_SHORT).show();
             }
         });

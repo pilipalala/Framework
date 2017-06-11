@@ -1,6 +1,5 @@
 package com.example.administrator.demo.Framework.guanggaotiao;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -123,7 +122,7 @@ public class GuangGaoTiaoActivity extends BaseActivity {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(GuangGaoTiaoActivity.this, imageDescriptions[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(GuangGaoTiaoActivity.this, PxDpActivity.class));
+
             }
         });
 
@@ -164,6 +163,11 @@ public class GuangGaoTiaoActivity extends BaseActivity {
         });
 
     }
+
+
+
+
+
 
     private class MyViewPagerListener implements ViewPager.OnPageChangeListener {
         /**
