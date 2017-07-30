@@ -23,6 +23,10 @@ android {
         incremental true
         javaMaxHeapSize "4g"
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 
@@ -65,8 +69,11 @@ dependencies {
     compile project(':IMKit')
     compile files('libs/pinyin4j-2.5.0.jar')
     //    compile 'com.github.chrisbanes:PhotoView:1.2.6'
+
     /*数据库*/
+
     //可以单独使用，不需要依赖下方的扩展包
+    compile files('libs/nineoldandroids-2.4.0.jar')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'

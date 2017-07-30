@@ -140,7 +140,6 @@
         <activity android:name=".Framework.countdown.CountDownRunnableActivity" />
         <activity android:name=".Framework.countdown.CountDownTimerActivity" />
         <activity android:name=".Framework.countdown.CountDownActivity" />
-        <activity android:name=".Framework.customview.viewpage.CustomViewMainActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -185,13 +184,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".Framework.customview.viewpage.CustomViewMainActivity" />
-        <activity android:name=".Framework.shoppingcart.ShoppingCartActivity" />
         <activity android:name=".Framework.eventtest.TouchEventActivity" />
         <activity android:name=".Framework.customview.index.QuickIndexActivity" />
         <activity android:name=".Framework.customview.SkateMenu.SkateMenuActivity" />
         <activity android:name=".Framework.guanggaotiao.PhotoViewActivity" />
         <activity android:name=".Framework.litepal.LitePalActivity" />
-        <activity android:name=".Framework.okgo.OkGoMainActivity"></activity>
+        <activity android:name=".Framework.okgo.OkGoMainActivity" />
+        <activity android:name=".Framework.MotionEvent.MotionEventActivity" />
+        <activity android:name=".Framework.MotionEvent.KeyEventTestActivity" />
+        <activity android:name=".Framework.MotionEvent.MotionEventTestActivity"></activity>
     </application>
 
 </manifest>

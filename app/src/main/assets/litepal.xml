@@ -2,14 +2,11 @@
 <litepal>
     <dbname value="pilipala"></dbname>
 
-    <version value="5"></version>
+    <version value="1"></version>
 
     <list>
         <!--这里是类映射-->
-        <mapping class="com.example.administrator.demo.Framework.litepal.News"></mapping>
-        <mapping class="com.example.administrator.demo.Framework.litepal.Comment"></mapping>
-        <mapping class="com.example.administrator.demo.Framework.litepal.Introduction"></mapping>
-        <mapping class="com.example.administrator.demo.Framework.litepal.Category"></mapping>
-
+        <mapping class="com.example.administrator.demo.Framework.litepal.Shop"></mapping>
+        <mapping class="com.example.administrator.demo.Framework.litepal.Product"></mapping>
     </list>
 </litepal>

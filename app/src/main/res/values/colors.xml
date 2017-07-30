@@ -14,4 +14,7 @@
     <color name="main_color">#5CB85C</color>
     <color name="themeColor">#13227a</color>
     <color name="theme_color">#424879</color>
+    <color name="menu_section_header">#FFDDDDDD</color>
+    <color name="header_normal">#ffe74c3c</color>
+    <color name="header_pressed">#ffc0392b</color>
 </resources>
