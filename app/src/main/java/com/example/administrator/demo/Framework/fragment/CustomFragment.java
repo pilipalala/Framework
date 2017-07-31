@@ -11,7 +11,6 @@ import com.example.administrator.demo.Framework.BaseFragment;
 import com.example.administrator.demo.Framework.DataUtil;
 import com.example.administrator.demo.Framework.guanggaotiao.GuangGaoTiaoActivity;
 import com.example.administrator.demo.Framework.litepal.LitePalActivity;
-import com.example.administrator.demo.Framework.shoppingcart.ShoppingCartActivity;
 import com.example.administrator.demo.Framework.youkumenu.YouKuMenuActivity;
 import com.example.administrator.demo.R;
 
@@ -38,7 +37,7 @@ public class CustomFragment extends BaseFragment {
                         startActivity(new Intent(getActivity(), GuangGaoTiaoActivity.class));
                         break;
                     case 2:
-                        startActivity(new Intent(getActivity(), ShoppingCartActivity.class));
+
                         break;
                     case 3:
                         startActivity(new Intent(getActivity(), LitePalActivity.class));

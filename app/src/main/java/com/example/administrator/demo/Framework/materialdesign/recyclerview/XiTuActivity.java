@@ -112,7 +112,6 @@ public class XiTuActivity extends BaseActivity {
         fragments = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             if (i == 0) {
-                fragments.add(new ShopCartFragment(tabTitles[i], 5 + i));
             } else {
                 fragments.add(new MyFragment(tabTitles[i], 5 + i));
             }
