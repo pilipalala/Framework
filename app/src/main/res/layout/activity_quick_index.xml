@@ -25,7 +25,7 @@
 
     <com.example.administrator.demo.Framework.customview.index.IndexView
         android:id="@+id/iv_words"
-        android:layout_width="@dimen/dp_30"
+        android:layout_width="@dimen/dp_50"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:background="@color/theme_color" />

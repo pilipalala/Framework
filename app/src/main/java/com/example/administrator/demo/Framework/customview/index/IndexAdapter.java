@@ -78,10 +78,6 @@ public class IndexAdapter extends BaseAdapter {
         this.data = data;
     }
 
-    public String getWord() {
-        return word;
-    }
-
     static class ViewHolder {
         @Bind(R.id.tv_word)
         TextView tvWord;
